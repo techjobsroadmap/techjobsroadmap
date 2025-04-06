@@ -348,7 +348,59 @@ footer {
 .footer-section a:hover {
     color: var(--secondary-orange);
 }
-
+.chat-box {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 260px;
+    background-color: rgba(255, 255, 255, 0.3); /* 30% opacity */
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    display: none;
+    z-index: 9999;
+    backdrop-filter: blur(6px); /* Optional: adds a nice glassmorphism effect */
+  }
+  
+  .chat-header {
+    background: linear-gradient(rgba(126, 227, 205, 0.7), rgba(96, 133, 228, 0.7)); /* WhatsApp green with slight transparency */
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .chat-body {
+    padding: 15px;
+    font-size: 14px;
+    color: #000;
+  }
+  
+  .chat-body button {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+    transition: background-color 0.1s ease;
+  }
+  
+  .chat-body button:hover {
+    background-color: #7abc1e;
+  }
+  
+  .close-btn {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+  }
 
 /* Responsive Design */
 @media (max-width: 768px) {
