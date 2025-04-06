@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mock Test - Acctrum Gateway to IT</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    .correct { background-color: #d4edda; }
+    .wrong { background-color: #f8d7da; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="../website/index.html#home" class="logo">
+        <img src="../logo/1.jpg" alt="Innolytics Logo" class="logo-img" />
+      </a>
+      <div class="nav-links">
+        <a href="../website/index.html#home">Home</a>
+        <a href="../website/index.html#courses">Courses</a>
+        <a href="../website/index.html#features">Features</a>
+        <a href="../website/index.html#testimonials">Testimonials</a>
+        <a href="../website/index.html#contact">Contact</a>
+        <a href="../website/index.html#login">Login</a>
+      </div>
+    </nav>
+  </header>
+  <section class="mock-test" id="mock-test">
+    <h2>UI Path Mock Test</h2>
+    <p>Answer all 15 questions. Choose the correct answer and submit to view your result.</p>
+  
+    <div id="timer" style="font-weight: bold; margin: 10px 0; font-size: 18px;"></div>
+  
+    <form id="mock-test-form"></form>
+  
+    <button type="button" class="cta-button" onclick="submitTest()">Submit Test</button>
+    <button type="button" class="cta-button" onclick="restartTest()" style="display:none;" id="restart-btn">Try Again</button>
+  
+    <div id="result" style="display:none;">
+      <h3>Test Results</h3>
+      <p id="score"></p>
+    </div>
+  </section>
+  
+  <script>
+  const questions = [
+  {
+    question: "What is UiPath?",
+    options: {
+      a: "A text editor",
+      b: "A database tool",
+      c: "A Robotic Process Automation tool",
+      d: "A graphics design tool"
+    },
+    answer: "c"
+  },
+  {
+    question: "What is RPA in UiPath?",
+    options: {
+      a: "Remote Programming Application",
+      b: "Robotic Process Automation",
+      c: "Real-time Process Automation",
+      d: "Robotic Programming Assistant"
+    },
+    answer: "b"
+  },
+  {
+    question: "Which language is used in UiPath for writing expressions?",
+    options: {
+      a: "Java",
+      b: "VB.NET",
+      c: "Python",
+      d: "C++"
+    },
+    answer: "b"
+  },
+  {
+    question: "Which panel in UiPath is used to manage variables?",
+    options: {
+      a: "Properties Panel",
+      b: "Output Panel",
+      c: "Variables Panel",
+      d: "Project Panel"
+    },
+    answer: "c"
+  },
+  {
+    question: "What is a Sequence in UiPath?",
+    options: {
+      a: "A function",
+      b: "A container that enables linear process flow",
+      c: "A loop structure",
+      d: "A condition block"
+    },
+    answer: "b"
+  },
+  {
+    question: "Which activity is used to read data from an Excel file?",
+    options: {
+      a: "Read CSV",
+      b: "Read PDF Text",
+      c: "Read Range",
+      d: "Open Workbook"
+    },
+    answer: "c"
+  },
+  {
+    question: "Which activity is used to repeat a set of actions in UiPath?",
+    options: {
+      a: "If",
+      b: "Assign",
+      c: "For Each",
+      d: "Message Box"
+    },
+    answer: "c"
+  },
+  {
+    question: "What is the purpose of the Assign activity?",
+    options: {
+      a: "Display values",
+      b: "Read a file",
+      c: "Assign values to variables",
+      d: "Pause execution"
+    },
+    answer: "c"
+  },
+  {
+    question: "Which activity is used to display a message to the user?",
+    options: {
+      a: "Write Line",
+      b: "Message Box",
+      c: "Log Message",
+      d: "Display Alert"
+    },
+    answer: "b"
+  },
+  {
+    question: "What is the file extension of a UiPath workflow?",
+    options: {
+      a: ".xlsx",
+      b: ".xml",
+      c: ".xaml",
+      d: ".html"
+    },
+    answer: "c"
+  },
+  {
+    question: "Which activity is used to make a decision in UiPath?",
+    options: {
+      a: "Switch",
+      b: "If",
+      c: "While",
+      d: "For Each"
+    },
+    answer: "b"
+  },
+  {
+    question: "Which activity is used to pause workflow execution for a specific time?",
+    options: {
+      a: "Stop",
+      b: "Pause",
+      c: "Delay",
+      d: "Sleep"
+    },
+    answer: "c"
+  },
+  {
+    question: "Which of the following is used to store project dependencies?",
+    options: {
+      a: "project.json",
+      b: "main.xaml",
+      c: "settings.config",
+      d: "workflow.xaml"
+    },
+    answer: "a"
+  },
+  {
+    question: "What is the default recording type in UiPath?",
+    options: {
+      a: "Desktop",
+      b: "Basic",
+      c: "Web",
+      d: "Citrix"
+    },
+    answer: "b"
+  },
+  {
+    question: "Which activity is used to open a browser in UiPath?",
+    options: {
+      a: "Start App",
+      b: "Launch Browser",
+      c: "Open Browser",
+      d: "Browser Open"
+    },
+    answer: "c"
+  }
+];
+  
+    let timerInterval;
+    let timeLeft = 600;
+  
+    function shuffle(array) {
+      return array.sort(() => Math.random() - 0.5);
+    }
+  
+    function startTimer() {
+      const timerDisplay = document.getElementById("timer");
+      timerInterval = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerDisplay.textContent = `Time Left: ${minutes}:${seconds.toString().padStart(2, "0")}`;
+        timeLeft--;
+        if (timeLeft < 0) {
+          clearInterval(timerInterval);
+          submitTest(true);
+        }
+      }, 1000);
+    }
+  
+    function renderQuestions() {
+      const form = document.getElementById("mock-test-form");
+      form.innerHTML = "";
+      const shuffledQuestions = shuffle([...questions]);
+  
+      shuffledQuestions.forEach((q, i) => {
+        const questionDiv = document.createElement("div");
+        questionDiv.classList.add("question");
+        questionDiv.setAttribute("data-answer", q.answer);
+        questionDiv.innerHTML = `<p><strong>Q${i + 1}:</strong> ${q.question}</p>`;
+  
+        const shuffledOptions = shuffle(Object.entries(q.options));
+        shuffledOptions.forEach(([key, value]) => {
+          const optionId = `q${i}_${key}`;
+          questionDiv.innerHTML += `
+            <label for="${optionId}">
+              <input type="radio" name="q${i}" id="${optionId}" value="${key}"> ${value}
+            </label><br>`;
+        });
+  
+        form.appendChild(questionDiv);
+      });
+    }
+  
+    function submitTest(autoSubmit = false) {
+      clearInterval(timerInterval);
+      let score = 0;
+  
+      const questionsDivs = document.querySelectorAll(".question");
+      questionsDivs.forEach((div, i) => {
+        const correct = div.getAttribute("data-answer");
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        const inputs = div.querySelectorAll(`input[name="q${i}"]`);
+  
+        inputs.forEach(input => {
+          const label = input.parentElement;
+          if (input.value === correct) {
+            label.classList.add("correct");
+          }
+          if (selected && input.checked && input.value !== correct) {
+            label.classList.add("incorrect");
+          }
+        });
+  
+        if (selected && selected.value === correct) {
+          score++;
+        }
+      });
+  
+      document.getElementById("score").textContent = `You got ${score} out of ${questionsDivs.length} correct.${autoSubmit ? " (Auto-submitted)" : ""}`;
+      document.getElementById("result").style.display = "block";
+      document.getElementById("restart-btn").style.display = "inline-block";
+    }
+  
+    function restartTest() {
+      timeLeft = 900;
+      document.getElementById("result").style.display = "none";
+      document.getElementById("restart-btn").style.display = "none";
+      renderQuestions();
+      startTimer();
+    }
+  
+    window.onload = () => {
+      renderQuestions();
+      startTimer();
+    };
+  </script>
+     <!-- Footer -->
+     <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: techjobsroadmap@gmail.com</p>
+                <p>Phone: +91 77088 08400</p>
+                <p>Address: Erode & Chennai Tamilnadu, India</p>
+                
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="../website/index.html#courses">Courses</a><br>
+                <a href="../website/index.html#features">Features</a><br>
+                <a href="../website/index.html#testimonials">Testimonials</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <a href="https://www.facebook.com/YourPage" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/YourPage" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.instagram.com/YourPage" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://twitter.com/YourPage" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+  
+</body>
+</html>

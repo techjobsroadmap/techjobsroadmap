@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mock Test - Acctrum Gateway to IT</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    .correct { background-color: #d4edda; }
+    .wrong { background-color: #f8d7da; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="../website/index.html#home" class="logo">
+        <img src="../logo/1.jpg" alt="Innolytics Logo" class="logo-img" />
+      </a>
+      <div class="nav-links">
+        <a href="../website/index.html#home">Home</a>
+        <a href="../website/index.html#courses">Courses</a>
+        <a href="../website/index.html#features">Features</a>
+        <a href="../website/index.html#testimonials">Testimonials</a>
+        <a href="../website/index.html#contact">Contact</a>
+        <a href="../website/index.html#login">Login</a>
+      </div>
+    </nav>
+  </header>
+  <section class="mock-test" id="mock-test">
+    <h2>Manual Testing Mock Test</h2>
+    <p>Answer all 15 questions. Choose the correct answer and submit to view your result.</p>
+  
+    <div id="timer" style="font-weight: bold; margin: 10px 0; font-size: 18px;"></div>
+  
+    <form id="mock-test-form"></form>
+  
+    <button type="button" class="cta-button" onclick="submitTest()">Submit Test</button>
+    <button type="button" class="cta-button" onclick="restartTest()" style="display:none;" id="restart-btn">Try Again</button>
+  
+    <div id="result" style="display:none;">
+      <h3>Test Results</h3>
+      <p id="score"></p>
+    </div>
+  </section>
+  
+  <script>
+    const questions = [
+      {
+        question: "What is Manual Testing?",
+        options: {
+          a: "Testing done using tools",
+          b: "Testing done automatically",
+          c: "Testing done by a human without automation tools",
+          d: "Testing using AI bots"
+        },
+        answer: "c"
+      },
+      {
+        question: "Which of the following is a type of software testing?",
+        options: {
+          a: "Functional Testing",
+          b: "Graphic Testing",
+          c: "Object Testing",
+          d: "Unit Formatting"
+        },
+        answer: "a"
+      },
+      {
+        question: "What is the purpose of a Test Case?",
+        options: {
+          a: "To develop code",
+          b: "To check grammar",
+          c: "To define steps to test a feature",
+          d: "To compile scripts"
+        },
+        answer: "c"
+      },
+      {
+        question: "Which document describes what to test, how to test, and when to test?",
+        options: {
+          a: "Test Case",
+          b: "Bug Report",
+          c: "Test Plan",
+          d: "Release Note"
+        },
+        answer: "c"
+      },
+      {
+        question: "What is a bug in software testing?",
+        options: {
+          a: "A feature",
+          b: "A code snippet",
+          c: "An error or flaw in the software",
+          d: "A tool"
+        },
+        answer: "c"
+      },
+      {
+        question: "What is the main objective of Manual Testing?",
+        options: {
+          a: "To automate code",
+          b: "To develop code",
+          c: "To find defects",
+          d: "To install apps"
+        },
+        answer: "c"
+      },
+      {
+        question: "Smoke testing is also called:",
+        options: {
+          a: "White-box testing",
+          b: "Build verification testing",
+          c: "Black-box testing",
+          d: "Sanity testing"
+        },
+        answer: "b"
+      },
+      {
+        question: "Which testing checks the entire system as a whole?",
+        options: {
+          a: "Unit Testing",
+          b: "Integration Testing",
+          c: "System Testing",
+          d: "Code Testing"
+        },
+        answer: "c"
+      },
+      {
+        question: "Regression testing is performed to:",
+        options: {
+          a: "Check for spelling mistakes",
+          b: "Add new features",
+          c: "Ensure new changes haven't broken existing features",
+          d: "Write documentation"
+        },
+        answer: "c"
+      },
+      {
+        question: "What is a Test Scenario?",
+        options: {
+          a: "A plan to execute unit testing",
+          b: "A high-level description of what to test",
+          c: "A tool for testing",
+          d: "A database schema"
+        },
+        answer: "b"
+      },
+      {
+        question: "In which testing is code not visible to the tester?",
+        options: {
+          a: "White-box testing",
+          b: "Black-box testing",
+          c: "Unit testing",
+          d: "Static testing"
+        },
+        answer: "b"
+      },
+      {
+        question: "Sanity testing is done to:",
+        options: {
+          a: "Check detailed functionality",
+          b: "Verify basic functionality after a build",
+          c: "Find memory leaks",
+          d: "Measure performance"
+        },
+        answer: "b"
+      },
+      {
+        question: "Which one is NOT a type of testing?",
+        options: {
+          a: "Load Testing",
+          b: "Stress Testing",
+          c: "Shadow Testing",
+          d: "Usability Testing"
+        },
+        answer: "c"
+      },
+      {
+        question: "What does a Bug Report contain?",
+        options: {
+          a: "Developer comments only",
+          b: "Test cases only",
+          c: "Details of the defect found",
+          d: "Test data only"
+        },
+        answer: "c"
+      },
+      {
+        question: "Exploratory testing is:",
+        options: {
+          a: "Script-based testing",
+          b: "Testing with no predefined test cases",
+          c: "Testing only on weekends",
+          d: "Testing with automation tools only"
+        },
+        answer: "b"
+      }
+    ];
+    
+  
+    let timerInterval;
+    let timeLeft = 600;
+  
+    function shuffle(array) {
+      return array.sort(() => Math.random() - 0.5);
+    }
+  
+    function startTimer() {
+      const timerDisplay = document.getElementById("timer");
+      timerInterval = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerDisplay.textContent = `Time Left: ${minutes}:${seconds.toString().padStart(2, "0")}`;
+        timeLeft--;
+        if (timeLeft < 0) {
+          clearInterval(timerInterval);
+          submitTest(true);
+        }
+      }, 1000);
+    }
+  
+    function renderQuestions() {
+      const form = document.getElementById("mock-test-form");
+      form.innerHTML = "";
+      const shuffledQuestions = shuffle([...questions]);
+  
+      shuffledQuestions.forEach((q, i) => {
+        const questionDiv = document.createElement("div");
+        questionDiv.classList.add("question");
+        questionDiv.setAttribute("data-answer", q.answer);
+        questionDiv.innerHTML = `<p><strong>Q${i + 1}:</strong> ${q.question}</p>`;
+  
+        const shuffledOptions = shuffle(Object.entries(q.options));
+        shuffledOptions.forEach(([key, value]) => {
+          const optionId = `q${i}_${key}`;
+          questionDiv.innerHTML += `
+            <label for="${optionId}">
+              <input type="radio" name="q${i}" id="${optionId}" value="${key}"> ${value}
+            </label><br>`;
+        });
+  
+        form.appendChild(questionDiv);
+      });
+    }
+  
+    function submitTest(autoSubmit = false) {
+      clearInterval(timerInterval);
+      let score = 0;
+  
+      const questionsDivs = document.querySelectorAll(".question");
+      questionsDivs.forEach((div, i) => {
+        const correct = div.getAttribute("data-answer");
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        const inputs = div.querySelectorAll(`input[name="q${i}"]`);
+  
+        inputs.forEach(input => {
+          const label = input.parentElement;
+          if (input.value === correct) {
+            label.classList.add("correct");
+          }
+          if (selected && input.checked && input.value !== correct) {
+            label.classList.add("incorrect");
+          }
+        });
+  
+        if (selected && selected.value === correct) {
+          score++;
+        }
+      });
+  
+      document.getElementById("score").textContent = `You got ${score} out of ${questionsDivs.length} correct.${autoSubmit ? " (Auto-submitted)" : ""}`;
+      document.getElementById("result").style.display = "block";
+      document.getElementById("restart-btn").style.display = "inline-block";
+    }
+  
+    function restartTest() {
+      timeLeft = 900;
+      document.getElementById("result").style.display = "none";
+      document.getElementById("restart-btn").style.display = "none";
+      renderQuestions();
+      startTimer();
+    }
+  
+    window.onload = () => {
+      renderQuestions();
+      startTimer();
+    };
+  </script>
+     <!-- Footer -->
+     <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: techjobsroadmap@gmail.com</p>
+                <p>Phone: +91 77088 08400</p>
+                <p>Address: Erode & Chennai Tamilnadu, India</p>
+                
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="../website/index.html#courses">Courses</a><br>
+                <a href="../website/index.html#features">Features</a><br>
+                <a href="../website/index.html#testimonials">Testimonials</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <a href="https://www.facebook.com/YourPage" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/YourPage" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.instagram.com/YourPage" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://twitter.com/YourPage" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+  
+</body>
+</html>
