@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mock Test - Acctrum Gateway to IT</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    .correct { background-color: #d4edda; }
+    .wrong { background-color: #f8d7da; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html#home" class="logo">
+        <img src="1.jpg" alt="Innolytics Logo" class="logo-img" />
+      </a>
+      <div class="nav-links">
+        <a href="index.html#home">Home</a>
+        <a href="index.html#courses">Courses</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#testimonials">Testimonials</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#login">Login</a>
+      </div>
+    </nav>
+  </header>
+  <section class="mock-test" id="mock-test">
+    <h2>Web Full Stack Mock Test</h2>
+    <p>Answer all 15 questions. Choose the correct answer and submit to view your result.</p>
+  
+    <div id="timer" style="font-weight: bold; margin: 10px 0; font-size: 18px;"></div>
+  
+    <form id="mock-test-form"></form>
+  
+    <button type="button" class="cta-button" onclick="submitTest()">Submit Test</button>
+    <button type="button" class="cta-button" onclick="restartTest()" style="display:none;" id="restart-btn">Try Again</button>
+  
+    <div id="result" style="display:none;">
+      <h3>Test Results</h3>
+      <p id="score"></p>
+    </div>
+  </section>
+  
+  <script>
+  const questions = [
+  {
+    question: "What does HTML stand for?",
+    options: {
+      a: "Hyperlinks and Text Markup Language",
+      b: "Home Tool Markup Language",
+      c: "Hyper Text Markup Language",
+      d: "Hyper Text Markdown Language"
+    },
+    answer: "c"
+  },
+  {
+    question: "Which language is used for styling web pages?",
+    options: {
+      a: "HTML",
+      b: "CSS",
+      c: "JavaScript",
+      d: "XML"
+    },
+    answer: "b"
+  },
+  {
+    question: "Which language is used to add interactivity to a web page?",
+    options: {
+      a: "CSS",
+      b: "HTML",
+      c: "JavaScript",
+      d: "SQL"
+    },
+    answer: "c"
+  },
+  {
+    question: "Which tag is used to create a hyperlink in HTML?",
+    options: {
+      a: "&lt;a&gt;",
+      b: "&lt;link&gt;",
+      c: "&lt;href&gt;",
+      d: "&lt;url&gt;"
+    },
+    answer: "a"
+  },
+  {
+    question: "Which HTML tag is used to display an image?",
+    options: {
+      a: "&lt;pic&gt;",
+      b: "&lt;img&gt;",
+      c: "&lt;src&gt;",
+      d: "&lt;image&gt;"
+    },
+    answer: "b"
+  },
+  {
+    question: "Which CSS property is used to change text color?",
+    options: {
+      a: "text-color",
+      b: "color",
+      c: "font-color",
+      d: "text-style"
+    },
+    answer: "b"
+  },
+  {
+    question: "Which HTML tag is used for a line break?",
+    options: {
+      a: "&lt;br&gt;",
+      b: "&lt;lb&gt;",
+      c: "&lt;break&gt;",
+      d: "&lt;hr&gt;"
+    },
+    answer: "a"
+  },
+  {
+    question: "What does CSS stand for?",
+    options: {
+      a: "Computer Style Sheets",
+      b: "Colorful Style Sheets",
+      c: "Cascading Style Sheets",
+      d: "Creative Style Sheets"
+    },
+    answer: "c"
+  },
+  {
+    question: "Which HTML tag is used for the largest heading?",
+    options: {
+      a: "&lt;h6&gt;",
+      b: "&lt;heading&gt;",
+      c: "&lt;h1&gt;",
+      d: "&lt;head&gt;"
+    },
+    answer: "c"
+  },
+  {
+    question: "Which symbol is used for IDs in CSS?",
+    options: {
+      a: ".",
+      b: "#",
+      c: "@",
+      d: "&"
+    },
+    answer: "b"
+  },
+  {
+    question: "Which function is used to log messages in JavaScript?",
+    options: {
+      a: "print()",
+      b: "log()",
+      c: "console.log()",
+      d: "alert.log()"
+    },
+    answer: "c"
+  },
+  {
+    question: "Which company developed JavaScript?",
+    options: {
+      a: "Microsoft",
+      b: "Netscape",
+      c: "Google",
+      d: "Apple"
+    },
+    answer: "b"
+  },
+  {
+    question: "Which attribute specifies the path to the CSS file?",
+    options: {
+      a: "src",
+      b: "href",
+      c: "link",
+      d: "path"
+    },
+    answer: "b"
+  },
+  {
+    question: "Which HTML attribute is used to define inline styles?",
+    options: {
+      a: "font",
+      b: "class",
+      c: "style",
+      d: "styles"
+    },
+    answer: "c"
+  },
+  {
+    question: "What is the default port of a local web server?",
+    options: {
+      a: "80",
+      b: "3000",
+      c: "8080",
+      d: "443"
+    },
+    answer: "a"
+  }
+];
+  
+    let timerInterval;
+    let timeLeft = 600;
+  
+    function shuffle(array) {
+      return array.sort(() => Math.random() - 0.5);
+    }
+  
+    function startTimer() {
+      const timerDisplay = document.getElementById("timer");
+      timerInterval = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerDisplay.textContent = `Time Left: ${minutes}:${seconds.toString().padStart(2, "0")}`;
+        timeLeft--;
+        if (timeLeft < 0) {
+          clearInterval(timerInterval);
+          submitTest(true);
+        }
+      }, 1000);
+    }
+  
+    function renderQuestions() {
+      const form = document.getElementById("mock-test-form");
+      form.innerHTML = "";
+      const shuffledQuestions = shuffle([...questions]);
+  
+      shuffledQuestions.forEach((q, i) => {
+        const questionDiv = document.createElement("div");
+        questionDiv.classList.add("question");
+        questionDiv.setAttribute("data-answer", q.answer);
+        questionDiv.innerHTML = `<p><strong>Q${i + 1}:</strong> ${q.question}</p>`;
+  
+        const shuffledOptions = shuffle(Object.entries(q.options));
+        shuffledOptions.forEach(([key, value]) => {
+          const optionId = `q${i}_${key}`;
+          questionDiv.innerHTML += `
+            <label for="${optionId}">
+              <input type="radio" name="q${i}" id="${optionId}" value="${key}"> ${value}
+            </label><br>`;
+        });
+  
+        form.appendChild(questionDiv);
+      });
+    }
+  
+    function submitTest(autoSubmit = false) {
+      clearInterval(timerInterval);
+      let score = 0;
+  
+      const questionsDivs = document.querySelectorAll(".question");
+      questionsDivs.forEach((div, i) => {
+        const correct = div.getAttribute("data-answer");
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        const inputs = div.querySelectorAll(`input[name="q${i}"]`);
+  
+        inputs.forEach(input => {
+          const label = input.parentElement;
+          if (input.value === correct) {
+            label.classList.add("correct");
+          }
+          if (selected && input.checked && input.value !== correct) {
+            label.classList.add("incorrect");
+          }
+        });
+  
+        if (selected && selected.value === correct) {
+          score++;
+        }
+      });
+  
+      document.getElementById("score").textContent = `You got ${score} out of ${questionsDivs.length} correct.${autoSubmit ? " (Auto-submitted)" : ""}`;
+      document.getElementById("result").style.display = "block";
+      document.getElementById("restart-btn").style.display = "inline-block";
+    }
+  
+    function restartTest() {
+      timeLeft = 900;
+      document.getElementById("result").style.display = "none";
+      document.getElementById("restart-btn").style.display = "none";
+      renderQuestions();
+      startTimer();
+    }
+  
+    window.onload = () => {
+      renderQuestions();
+      startTimer();
+    };
+  </script>
+     <!-- Footer -->
+     <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: techjobsroadmap@gmail.com</p>
+                <p>Phone: +91 77088 08400</p>
+                <p>Address: Erode & Chennai Tamilnadu, India</p>
+                
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html#courses">Courses</a><br>
+                <a href="index.html#features">Features</a><br>
+                <a href="index.html#testimonials">Testimonials</a>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <a href="https://www.facebook.com/YourPage" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/YourPage" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.instagram.com/YourPage" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="https://twitter.com/YourPage" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+  
+</body>
+</html>
