@@ -183,6 +183,32 @@
             </div>
         </div>
     </footer>
-    
+  <div id="whatsapp-chat-box" class="chat-box">
+        <div class="chat-header">
+          <strong>Chat with us</strong>
+          <span onclick="closeChat()" class="close-btn">&times;</span>
+        </div>
+        <div class="chat-body">
+          <p>Hi there! 👋<br>Need help? Chat with us to get more details.</p>
+          <button onclick="redirectToWhatsApp()">Start Chat</button>
+        </div>
+      </div> 
+      <script>
+        window.onload = function () {
+          // Show chat box after 3 seconds
+          setTimeout(function () {
+            document.getElementById("whatsapp-chat-box").style.display = "block";
+          }, 5000);
+        };
+      
+        function redirectToWhatsApp() {
+          // Replace with your full WhatsApp number (without '+' sign)
+          window.open("https://wa.me/917708808400", "_blank");
+        }
+      
+        function closeChat() {
+          document.getElementById("whatsapp-chat-box").style.display = "none";
+        }
+      </script>  
 </body>
 </html>
