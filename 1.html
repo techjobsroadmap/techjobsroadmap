@@ -85,18 +85,24 @@
 
  <label for="file" style="display: block; text-align: left; margin-bottom: 6px;">Attach a file (optional):</label>
 
-<label for="file" 
-       style="display: inline-block; background-color: #000; color: #fff; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; font-size: 16px;">
-  Choose File
-</label>
+<!-- File Upload Button -->
+  <label for="file" 
+         style="display: inline-flex; align-items: center; justify-content: center; 
+                background-color: #000; color: #fff; padding: 10px 20px; 
+                border: none; border-radius: 8px; cursor: pointer; font-size: 16px; height: 44px;">
+    Choose File
+  </label>
+  
+  <input type="file" name="attachment" id="file" style="display: none;" onchange="updateFileName()">
 
-<span id="file-name" style="margin-left: 10px; font-size: 0.9rem;"></span>
-<input type="file" name="attachment" id="file" style="display: none;" onchange="updateFileName()">
-
-<button type="submit" 
-        style="background-color: #000; color: #fff; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;font-size: 16px;">
-  Send
-</button>
+  <!-- Submit Button -->
+  <button type="submit" 
+          style="display: inline-flex; align-items: center; justify-content: center;
+                 background-color: #000; color: #fff; padding: 10px 20px; 
+                 border: none; border-radius: 8px; cursor: pointer; 
+                 font-size: 16px; height: 44px;">
+    Send
+  </button>
 
 </form>
 <script>
