@@ -58,19 +58,73 @@
         <a href="m2.html" class="cta-button">Take the Mock Test</a>
     </section>
     <!-- Contact Modal -->
+ <!-- Contact Modal -->
+<!-- Contact Modal with Getform Integration -->
 <div id="contactModal" style="display:none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 9999; justify-content: center; align-items: center;">
-    <div style="background: linear-gradient(135deg, #41b9ff, #2bff60, #cef827); padding: 30px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); position: relative;">
-      <span onclick="closeModal()" style="position: absolute; top: 10px; right: 15px; font-size: 20px; cursor: pointer;">&times;</span>
-      <h3 style="margin-bottom: 15px;">Contact Us</h3>
-      <p><strong>Email:</strong> techjobsroadmap@gmail.com</p>
-      <p>
-      <strong>Call / Chat:</strong> 
-      <a href="tel:+917708808400">+91 77088 08400</a> | 
-      <a href="https://wa.me/917708808400" target="_blank">Chat on WhatsApp</a>
-      </p>
-      <p><strong>Address:</strong> Erode & Chennai Tamilnadu, India</p>
-    </div>
+  <div style="background: linear-gradient(135deg, #41b9ff, #2bff60, #cef827); padding: 30px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); position: relative;">
+    <span onclick="closeModal()" style="position: absolute; top: 10px; right: 15px; font-size: 20px; cursor: pointer;">&times;</span>
+    
+    <h3 style="margin-bottom: 15px;">Contact Us</h3>
+    
+    <form action="https://getform.io/f/avrwlkla" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html">
+  <input type="hidden" name="_subject" value="New Contact Form Submission">
+  <input type="text" name="_gotcha" style="display:none"> <!-- Honeypot spam field -->
+
+  <input type="text" name="name" placeholder="Your Name" required 
+         style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 6px;">
+
+  <input type="tel" name="mobile" placeholder="Your Mobile Number" required 
+         pattern="[0-9]{10}" 
+         title="Enter a valid 10-digit mobile number"
+         style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 6px;">
+
+  <input type="email" name="email" placeholder="Your Email" 
+         style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 6px;">
+
+  <textarea name="message" placeholder="Your Message" 
+            style="width: 100%; padding: 8px; border-radius: 6px; margin-bottom: 10px;"></textarea>
+
+ <label for="file" style="display: block; text-align: left; margin-bottom: 6px;">Attach a file (optional):</label>
+
+<!-- File Upload Button -->
+  <label for="file" 
+         style="display: inline-flex; align-items: center; justify-content: center; 
+                background-color: #000; color: #fff; padding: 10px 20px; 
+                border: none; border-radius: 8px; cursor: pointer; font-size: 16px; height: 30px;">
+    Choose File
+  </label>
+  
+  <input type="file" name="attachment" id="file" style="display: none;" onchange="updateFileName()">
+
+  <!-- Submit Button -->
+  <button type="submit" 
+          style="display: inline-flex; align-items: center; justify-content: center;
+                 background-color: #000; color: #fff; padding: 10px 20px; 
+                 border: none; border-radius: 8px; cursor: pointer; 
+                 font-size: 16px; height: 30px;">
+    Send
+  </button>
+
+</form>
+<script>
+  function updateFileName() {
+    const fileInput = document.getElementById('file');
+    const fileNameDisplay = document.getElementById('file-name');
+    if (fileInput.files.length > 0) {
+      fileNameDisplay.textContent = fileInput.files[0].name;
+    } else {
+      fileNameDisplay.textContent = '';
+    }
+  }
+</script>
+
+    <p style="margin-top: 20px;"><strong>Email:</strong> techjobsroadmap@gmail.com</p>
+    <p><strong>Call / Chat:</strong> <a href="tel:+917708808400">+91 77088 08400</a> | <a href="https://wa.me/917708808400" target="_blank">Chat on WhatsApp</a></p>
+    <p><strong>Address:</strong> Erode & Chennai Tamilnadu, India</p>
   </div>
+</div>
+
   <script>
     function openModal() {
       document.getElementById("contactModal").style.display = "flex";
@@ -80,6 +134,7 @@
       document.getElementById("contactModal").style.display = "none";
     }
   </script>
+
 
     <!-- Footer -->
     <footer id="contact">
