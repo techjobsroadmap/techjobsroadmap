@@ -64,16 +64,35 @@
     
     <h3 style="margin-bottom: 15px;">Contact Us</h3>
     
-    <form action="https://getform.io/f/avrwlkla" method="POST">
-      <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html">
-      <input type="hidden" name="_subject" value="New Contact Form Submission">
-      <input type="text" name="_gotcha" style="display:none"> <!-- Honeypot spam field -->
-      
-      <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 6px;">
-      <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 6px;">
-      <textarea name="message" placeholder="Your Message" required style="width: 100%; padding: 8px; border-radius: 6px; margin-bottom: 10px;"></textarea>
-      <button type="submit" style="background-color: #000; color: #fff; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;">Send</button>
-    </form>
+    <form action="https://getform.io/f/avrwlkla" method="POST" enctype="multipart/form-data">
+  <input type="hidden" name="_redirect" value="https://yourdomain.com/thank-you.html">
+  <input type="hidden" name="_subject" value="New Contact Form Submission">
+  <input type="text" name="_gotcha" style="display:none"> <!-- Honeypot spam field -->
+
+  <input type="text" name="name" placeholder="Your Name" required 
+         style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 6px;">
+
+  <input type="tel" name="mobile" placeholder="Your Mobile Number" required 
+         pattern="[0-9]{10}" 
+         title="Enter a valid 10-digit mobile number"
+         style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 6px;">
+
+  <input type="email" name="email" placeholder="Your Email" 
+         style="width: 100%; padding: 8px; margin-bottom: 10px; border-radius: 6px;">
+
+  <textarea name="message" placeholder="Your Message" 
+            style="width: 100%; padding: 8px; border-radius: 6px; margin-bottom: 10px;"></textarea>
+
+  <label for="file" style="display: block; text-align: left; margin-bottom: 6px;">Attach a file (optional):</label>
+  <input type="file" name="attachment" id="file" 
+         style="margin-bottom: 15px; width: 100%;">
+
+  <button type="submit" 
+          style="background-color: #000; color: #fff; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;">
+    Send
+  </button>
+</form>
+
 
     <p style="margin-top: 20px;"><strong>Email:</strong> techjobsroadmap@gmail.com</p>
     <p><strong>Call / Chat:</strong> <a href="tel:+917708808400">+91 77088 08400</a> | <a href="https://wa.me/917708808400" target="_blank">Chat on WhatsApp</a></p>
