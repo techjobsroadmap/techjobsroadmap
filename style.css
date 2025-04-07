@@ -412,3 +412,16 @@ footer {
         font-size: 2.5rem;
     }
 }
+@keyframes bump {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.animated-attention {
+  animation: bump 1.8s infinite ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
