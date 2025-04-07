@@ -84,15 +84,28 @@
             style="width: 100%; padding: 8px; border-radius: 6px; margin-bottom: 10px;"></textarea>
 
   <label for="file" style="display: block; text-align: left; margin-bottom: 6px;">Attach a file (optional):</label>
-  <input type="file" name="attachment" id="file" 
-         style="margin-bottom: 15px; width: 100%;">
+<label for="file" style="display: inline-block; background-color: #000; color: #fff; padding: 10px 15px; border-radius: 8px; cursor: pointer; margin-bottom: 10px;">
+  Choose File
+</label>
+<span id="file-name" style="margin-left: 10px; font-size: 0.9rem;"></span>
+<input type="file" name="attachment" id="file" style="display: none;" onchange="updateFileName()">
 
   <button type="submit" 
           style="background-color: #000; color: #fff; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer;">
     Send
   </button>
 </form>
-
+<script>
+  function updateFileName() {
+    const fileInput = document.getElementById('file');
+    const fileNameDisplay = document.getElementById('file-name');
+    if (fileInput.files.length > 0) {
+      fileNameDisplay.textContent = fileInput.files[0].name;
+    } else {
+      fileNameDisplay.textContent = '';
+    }
+  }
+</script>
 
     <p style="margin-top: 20px;"><strong>Email:</strong> techjobsroadmap@gmail.com</p>
     <p><strong>Call / Chat:</strong> <a href="tel:+917708808400">+91 77088 08400</a> | <a href="https://wa.me/917708808400" target="_blank">Chat on WhatsApp</a></p>
