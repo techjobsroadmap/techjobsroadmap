@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Data Analytics Mock Test - Test your knowledge of Python, Pandas, data visualization, and statistical analysis fundamentals.">
+  <title>Data Analytics Mock Test - Acctrum Gateway to IT</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .correct {
+      background-color: #d4edda;
+    }
+
+    .wrong {
+      background-color: #f8d7da;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="../index.html#home" class="logo">
+        <img src="../images/1.jpg" alt="Innolytics Logo" class="logo-img" />
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#courses">Courses</a>
+        <a href="../index.html#features">Features</a>
+        <a href="../index.html#testimonials">Testimonials</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../index.html#login">Login</a>
+      </div>
+    </nav>
+  </header>
+  <section class="mock-test" id="mock-test">
+    <h2>Data Analytics Mock Test</h2>
+    <p>Answer all 15 questions. Choose the correct answer and submit to view your result.</p>
+
+    <div id="timer" style="font-weight: bold; margin: 10px 0; font-size: 18px;"></div>
+
+    <form id="mock-test-form"></form>
+
+    <button type="button" class="cta-button" onclick="submitTest()">Submit Test</button>
+    <button type="button" class="cta-button" onclick="restartTest()" style="display:none;" id="restart-btn">Try
+      Again</button>
+
+    <div id="result" style="display:none;">
+      <h3>Test Results</h3>
+      <p id="score"></p>
+    </div>
+  </section>
+
+  <script>
+    const questions = [
+      {
+        question: "What is the full form of CSV?",
+        options: {
+          a: "Comma Separated Values",
+          b: "Column Structured View",
+          c: "Common Separated Variables",
+          d: "Comma Structured Values"
+        },
+        answer: "a"
+      },
+      {
+        question: "Which language is widely used for data analysis?",
+        options: {
+          a: "C++",
+          b: "Python",
+          c: "Java",
+          d: "HTML"
+        },
+        answer: "b"
+      },
+      {
+        question: "Which library in Python is used for data manipulation?",
+        options: {
+          a: "NumPy",
+          b: "TensorFlow",
+          c: "Pandas",
+          d: "Matplotlib"
+        },
+        answer: "c"
+      },
+      {
+        question: "What is the purpose of a histogram?",
+        options: {
+          a: "Display relationships between variables",
+          b: "Show data distribution",
+          c: "Summarize text data",
+          d: "Show table structure"
+        },
+        answer: "b"
+      },
+      {
+        question: "Which tool is commonly used for data visualization?",
+        options: {
+          a: "Excel",
+          b: "Jupyter",
+          c: "PowerPoint",
+          d: "Outlook"
+        },
+        answer: "a"
+      },
+      {
+        question: "Which of the following is a type of chart?",
+        options: {
+          a: "Bar Chart",
+          b: "Pie Chart",
+          c: "Line Chart",
+          d: "All of the above"
+        },
+        answer: "d"
+      },
+      {
+        question: "What does SQL stand for?",
+        options: {
+          a: "Simple Query Language",
+          b: "Structured Question Language",
+          c: "Structured Query Language",
+          d: "Sequential Query Language"
+        },
+        answer: "c"
+      },
+      {
+        question: "Which function is used to find the average in Excel?",
+        options: {
+          a: "MEAN()",
+          b: "AVERAGE()",
+          c: "AVG()",
+          d: "MEDIAN()"
+        },
+        answer: "b"
+      },
+      {
+        question: "What is a dashboard in data analytics?",
+        options: {
+          a: "A tool to write code",
+          b: "A visual display of key metrics",
+          c: "A text document",
+          d: "A storage system"
+        },
+        answer: "b"
+      },
+      {
+        question: "Which of the following is a data type in Python?",
+        options: {
+          a: "integer",
+          b: "float",
+          c: "string",
+          d: "All of the above"
+        },
+        answer: "d"
+      },
+      {
+        question: "What is missing data?",
+        options: {
+          a: "Extra information",
+          b: "Incorrect data",
+          c: "Data not available in dataset",
+          d: "Wrong variable names"
+        },
+        answer: "c"
+      },
+      {
+        question: "Which of these is a machine learning algorithm?",
+        options: {
+          a: "Linear Regression",
+          b: "Bar Chart",
+          c: "Scatter Plot",
+          d: "Pie Chart"
+        },
+        answer: "a"
+      },
+      {
+        question: "Which tool is best for writing SQL queries?",
+        options: {
+          a: "Excel",
+          b: "Power BI",
+          c: "SQL Server Management Studio",
+          d: "Tableau"
+        },
+        answer: "c"
+      },
+      {
+        question: "What does ETL stand for?",
+        options: {
+          a: "Extract, Transform, Load",
+          b: "Export, Transform, Link",
+          c: "Extract, Test, Launch",
+          d: "Evaluate, Transform, Learn"
+        },
+        answer: "a"
+      },
+      {
+        question: "Which file format is commonly used for data exchange?",
+        options: {
+          a: "JPEG",
+          b: "TXT",
+          c: "CSV",
+          d: "MP4"
+        },
+        answer: "c"
+      }
+    ];
+
+    let timerInterval;
+    let timeLeft = 600;
+
+    function shuffle(array) {
+      return array.sort(() => Math.random() - 0.5);
+    }
+
+    function startTimer() {
+      const timerDisplay = document.getElementById("timer");
+      timerInterval = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerDisplay.textContent = `Time Left: ${minutes}:${seconds.toString().padStart(2, "0")}`;
+        timeLeft--;
+        if (timeLeft < 0) {
+          clearInterval(timerInterval);
+          submitTest(true);
+        }
+      }, 1000);
+    }
+
+    function renderQuestions() {
+      const form = document.getElementById("mock-test-form");
+      form.innerHTML = "";
+      const shuffledQuestions = shuffle([...questions]);
+
+      shuffledQuestions.forEach((q, i) => {
+        const questionDiv = document.createElement("div");
+        questionDiv.classList.add("question");
+        questionDiv.setAttribute("data-answer", q.answer);
+        questionDiv.innerHTML = `<p><strong>Q${i + 1}:</strong> ${q.question}</p>`;
+
+        const shuffledOptions = shuffle(Object.entries(q.options));
+        shuffledOptions.forEach(([key, value]) => {
+          const optionId = `q${i}_${key}`;
+          questionDiv.innerHTML += `
+            <label for="${optionId}">
+              <input type="radio" name="q${i}" id="${optionId}" value="${key}"> ${value}
+            </label><br>`;
+        });
+
+        form.appendChild(questionDiv);
+      });
+    }
+
+    function submitTest(autoSubmit = false) {
+      clearInterval(timerInterval);
+      let score = 0;
+
+      const questionsDivs = document.querySelectorAll(".question");
+      questionsDivs.forEach((div, i) => {
+        const correct = div.getAttribute("data-answer");
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        const inputs = div.querySelectorAll(`input[name="q${i}"]`);
+
+        inputs.forEach(input => {
+          const label = input.parentElement;
+          if (input.value === correct) {
+            label.classList.add("correct");
+          }
+          if (selected && input.checked && input.value !== correct) {
+            label.classList.add("incorrect");
+          }
+        });
+
+        if (selected && selected.value === correct) {
+          score++;
+        }
+      });
+
+      document.getElementById("score").textContent = `You got ${score} out of ${questionsDivs.length} correct.${autoSubmit ? " (Auto-submitted)" : ""}`;
+      document.getElementById("result").style.display = "block";
+      document.getElementById("restart-btn").style.display = "inline-block";
+    }
+
+    function restartTest() {
+      timeLeft = 900;
+      document.getElementById("result").style.display = "none";
+      document.getElementById("restart-btn").style.display = "none";
+      renderQuestions();
+      startTimer();
+    }
+
+    window.onload = function () {
+      // Initialize quiz
+      renderQuestions();
+      startTimer();
+
+      // Show chat box after 5 seconds
+      setTimeout(function () {
+        document.getElementById("whatsapp-chat-box").style.display = "block";
+      }, 5000);
+    };
+
+    function redirectToWhatsApp() {
+      // Replace with your full WhatsApp number (without '+' sign)
+      window.open("https://wa.me/917708808400", "_blank");
+    }
+
+    function closeChat() {
+      document.getElementById("whatsapp-chat-box").style.display = "none";
+    }
+  </script>
+</body>
+
+</html>

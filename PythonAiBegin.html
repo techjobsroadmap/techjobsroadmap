@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KPDN6JVY66"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-KPDN6JVY66');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Python and AI for Beginners - Free interactive course with live code execution. Learn Python programming and AI fundamentals.">
+    <title>Python and AI for Beginners - Interactive Course | Acctrum Gateway to IT</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script>
+        // Early function declarations to prevent errors from inline onclick handlers
+        function loadLesson(lessonId) {
+            // This will be overridden by the full implementation later
+            console.log('Loading lesson:', lessonId);
+        }
+        function toggleModule(header) {
+            // This will be overridden by the full implementation later
+        }
+    </script>
+</head>
+
+<body class="course-page">
+
+    <!-- Course Header -->
+    <header class="course-header">
+        <nav>
+            <a href="../index.html#home" class="logo">
+                <img src="../images/1.jpg" alt="Acctrum Logo" class="logo-img">
+            </a>
+            <div class="course-title-header">
+                <h1>AI Python for Beginners</h1>
+            </div>
+            <div class="header-actions">
+                <button class="btn-save"><i class="fas fa-save"></i> Save</button>
+                <a href="../index.html" class="btn-home"><i class="fas fa-home"></i> Home</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Course Layout -->
+    <div class="course-layout">
+
+        <!-- Left Sidebar - Course Navigation -->
+        <aside class="course-sidebar">
+            <div class="sidebar-content">
+
+                <!-- Module 1 -->
+                <div class="module-section active" data-module="module1">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h3>🐍 Module 1: Core Concepts of AI Python Programming</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <ul class="lesson-list">
+                        <li class="lesson-item active" data-lesson="1-1" onclick="loadLesson('1-1')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Introduction</span>
+                                <span class="lesson-duration">Video • 3 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="1-2" onclick="loadLesson('1-2')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">What is Computer Code?</span>
+                                <span class="lesson-duration">Video • 5 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="1-3" onclick="loadLesson('1-3')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Let's try your first program</span>
+                                <span class="lesson-duration">Video • 6 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="1-4" onclick="loadLesson('1-4')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Exploring the Learning Interface</span>
+                                <span class="lesson-duration">Video • 4 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="1-5" onclick="loadLesson('1-5')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Executing Your Initial Script</span>
+                                <span class="lesson-duration">Video • 8 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="1-6" onclick="loadLesson('1-6')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Strategies for Success in Coding</span>
+                                <span class="lesson-duration">Video • 7 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="1-7" onclick="loadLesson('1-7')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Understanding Data Types in Python</span>
+                                <span class="lesson-duration">Video • 6 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="1-8" onclick="loadLesson('1-8')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Combining Text Output with Calculations</span>
+                                <span class="lesson-duration">Video • 7 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="1-9" onclick="loadLesson('1-9')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Working with Dynamic Values (Variables)</span>
+                                <span class="lesson-duration">Video • 8 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="1-10" onclick="loadLesson('1-10')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Constructing LLM Prompts Using Variables</span>
+                                <span class="lesson-duration">Video • 9 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="1-11" onclick="loadLesson('1-11')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Defining Functions: Operations on Data</span>
+                                <span class="lesson-duration">Video • 10 mins</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="module-section" data-module="module2">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h3>🤖 Module 2: Streamlining Processes with Python Automation</h3>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <ul class="lesson-list" style="display: none;">
+                        <li class="lesson-item" data-lesson="2-1" onclick="loadLesson('2-1')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Introduction</span>
+                                <span class="lesson-duration">Video • 3 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="2-2" onclick="loadLesson('2-2')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Tackling a Task List Using AI Tools</span>
+                                <span class="lesson-duration">Video • 8 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="2-3" onclick="loadLesson('2-3')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Repeating Actions with Iteration (For Loops)</span>
+                                <span class="lesson-duration">Video • 9 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="2-4" onclick="loadLesson('2-4')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Organizing Tasks with Dictionaries and AI</span>
+                                <span class="lesson-duration">Video • 10 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="2-5" onclick="loadLesson('2-5')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Customizing Instructions with Lists and Dictionaries</span>
+                                <span class="lesson-duration">Video • 9 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="2-6" onclick="loadLesson('2-6')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Evaluating and Comparing Information</span>
+                                <span class="lesson-duration">Video • 8 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="2-7" onclick="loadLesson('2-7')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Guiding AI Decision-Making with Conditional Logic</span>
+                                <span class="lesson-duration">Video • 10 mins</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="module-section" data-module="module3">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h3>📂 Module 3: Interacting with Custom Data and Documents</h3>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <ul class="lesson-list" style="display: none;">
+                        <li class="lesson-item" data-lesson="3-1" onclick="loadLesson('3-1')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Introduction</span>
+                                <span class="lesson-duration">Video • 3 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="3-2" onclick="loadLesson('3-2')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Handling External Files in Python</span>
+                                <span class="lesson-duration">Video • 8 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="3-3" onclick="loadLesson('3-3')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Importing and Utilizing Your Own Datasets</span>
+                                <span class="lesson-duration">Video • 9 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="3-4" onclick="loadLesson('3-4')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Analyzing Textual Reviews from Data Sources</span>
+                                <span class="lesson-duration">Video • 10 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="3-5" onclick="loadLesson('3-5')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Extracting Location Details from Text</span>
+                                <span class="lesson-duration">Video • 9 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="3-6" onclick="loadLesson('3-6')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Travel Planning Using CSV Data</span>
+                                <span class="lesson-duration">Video • 11 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="3-7" onclick="loadLesson('3-7')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Converting Code into Reusable Routines</span>
+                                <span class="lesson-duration">Video • 10 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="3-8" onclick="loadLesson('3-8')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Generating Comprehensive Itineraries</span>
+                                <span class="lesson-duration">Video • 12 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="3-9" onclick="loadLesson('3-9')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Final Project Submission and Showcase</span>
+                                <span class="lesson-duration">Project • 15 mins</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="module-section" data-module="module4">
+                    <div class="module-header" onclick="toggleModule(this)">
+                        <h3>🚀 Module 4: Expanding Python with Libraries and APIs</h3>
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                    <ul class="lesson-list" style="display: none;">
+                        <li class="lesson-item" data-lesson="4-1" onclick="loadLesson('4-1')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Introduction</span>
+                                <span class="lesson-duration">Video • 3 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="4-2" onclick="loadLesson('4-2')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Utilizing Functions from a Local Module</span>
+                                <span class="lesson-duration">Video • 8 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="4-3" onclick="loadLesson('4-3')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Exploring Standard Python Libraries</span>
+                                <span class="lesson-duration">Video • 9 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="4-4" onclick="loadLesson('4-4')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Integrating External Software Libraries</span>
+                                <span class="lesson-duration">Video • 10 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="4-5" onclick="loadLesson('4-5')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Managing and Installing New Libraries</span>
+                                <span class="lesson-duration">Video • 8 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="4-6" onclick="loadLesson('4-6')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Accessing Data from the Web via APIs</span>
+                                <span class="lesson-duration">Video • 11 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="4-7" onclick="loadLesson('4-7')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Connecting to AI Models via APIs</span>
+                                <span class="lesson-duration">Video • 12 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="4-8" onclick="loadLesson('4-8')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Setting Up Python on Your Machine (Optional)</span>
+                                <span class="lesson-duration">Video • 10 mins</span>
+                            </div>
+                        </li>
+                        <li class="lesson-item" data-lesson="4-9" onclick="loadLesson('4-9')">
+                            <i class="fas fa-circle"></i>
+                            <div class="lesson-info">
+                                <span class="lesson-title">Course Summary and Conclusion</span>
+                                <span class="lesson-duration">Video • 5 mins</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Progress and Certificate -->
+                <div class="sidebar-footer">
+                    <div class="progress-section">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 38%"></div>
+                        </div>
+                        <span class="progress-text">38%</span>
+                    </div>
+                    <a href="#certificate" id="certificateBtn" class="certificate-link disabled"
+                        onclick="openCertificateModal(event)">
+                        <i class="fas fa-certificate"></i> Certificate
+                    </a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center Content - Jupyter Notebook -->
+        <div class="lesson-content">
+            <div class="jupyter-header">
+                <div class="jupyter-logo">
+                    <img src="https://jupyter.org/assets/homepage/main-logo.svg" alt="Jupyter" style="height: 30px;">
+                    <span>Lesson_1</span>
+                </div>
+                <div class="jupyter-info">
+                    <span class="kernel-info">Python 3 (ipykernel)</span>
+                </div>
+            </div>
+
+            <div class="lesson-text">
+                <h2>Lesson 1: Introduction</h2>
+                <p>🤖 Your Journey into AI Python: Why Coding Matters Now
+                    Welcome to the AI Python for Beginners course! Regardless of your current profession or future
+                    career aspirations—even if becoming an AI developer or software engineer isn't your goal—I'm
+                    thrilled you've joined us. By the time you finish this program, my hope is to demonstrate that
+                    writing code isn't just useful; it's enjoyable and a powerful asset for your daily work and personal
+                    life.
+                    The Changing Equation of Coding
+                    A decade ago, if someone had asked me, "Should everyone learn to code?" my answer would have been
+                    "No." Back then, the learning curve was steep, and the practical applications for people outside of
+                    highly technical roles weren't always clear.
+                <p>
+                    Whatever your job role and career goals, including if it is **not to become an AI developer or
+                    software engineer**, I'm glad you're here. And I hope to show you by the end of this course that
+                    **coding is useful, fun, and can help you in your day-to-day work and life.**
+                </p>
+
+                <h3>The Shift: Why Coding is Essential Now</h3>
+                <p>
+                    Ten years ago, if you'd asked me if everyone should learn to code, I would have said "no." Because
+                    learning to code took quite a bit of work and it wasn't clear, you know, what exactly the use cases
+                    were for people beyond really technical roles.
+                </p>
+                <p>
+                    But the **rise of AI**, specifically tools like **ChatGPT and Generative AI**, I think that equation
+                    has changed. I'm seeing that many people in **journalism, marketing, or business research or
+                    investing or administrative roles** are finding it useful to write a little bit of code in their
+                    work and get things done.
+                </p>
+                <p>
+                    And if you can learn to write just a little bit of code, you'd be **much more effective at many
+                    types of work**, especially knowledge work.
+                </p>
+
+                <h3>Coding with an AI Companion</h3>
+                <p>
+                    Since the release of ChatGPT and the wide availability of many generative AI tools, the way that
+                    people write code is different. Specifically with a **chatbot companion, you never have to code
+                    alone.** So it's as if you always have a buddy next to you that's actually pretty good at coding and
+                    can help you along with writing code.
+                </p>
+                <p>
+                    And this makes learning to code much easier. And later, once you're writing code yourself, an AI
+                    chatbot also makes your job much easier because you have this **experienced buddy to help you along
+                    every single step.** So these new AI tools have dramatically reduced the cost and effort needed to
+                    learn to code.
+                </p>
+
+                <h3>Future-Proofing Your Skills</h3>
+                <p>
+                    Now, there are a lot of coding courses out there on the internet. One thing that distinguishes this
+                    course from many of those out there is you learn this new methodology of working alongside a chatbot
+                    while you code **right away**. So you'd be learning skills that I think would be much more **future
+                    proof** and more aligned with the way that professional coding is trending.
+                </p>
+                <p>
+                    With the widespread availability of AI, what you find is that you can really get AI to do a lot more
+                    for you, if you know just a little bit of coding. And that means that because AI is impacting pretty
+                    much all knowledge work, if you work in a knowledge worker type of job role, or maybe even if you
+                    don't, your ability to write just a little bit of code will be, I think, a **significant
+                    productivity enhancer** for you.
+                </p>
+
+                <h3>Enjoy the Journey!</h3>
+                <p>
+                    So, I hope you enjoy the course and beyond it being practical and useful. I also don't want to
+                    understate that I think coding is just **really fun**. When you learn to code just a little bit, you
+                    get to do a lot of stuff that you just couldn't before. And I and many of my friends find that
+                    really fun. And I hope you will too.
+                </p>
+                <p>
+                    So let's go to the next video where you learn **what is a programming language** and how that lets
+                    us get computers to do more for us. I'll see you in the next video.
+                </p>
+            </div>
+
+            <div class="code-section">
+                <!-- Interactive Code Editor -->
+                <div class="code-editor">
+                    <div class="code-cell">
+                        <div class="cell-label">In [ ]:</div>
+                        <textarea id="codeInput" class="code-input" rows="3"># Welcome to Python!
+print("Hello, AI World!")</textarea>
+                    </div>
+                    <button class="btn-run" onclick="runCode()">
+                        <i class="fas fa-play"></i> Run
+                    </button>
+                    <div class="code-output" id="codeOutput"></div>
+                </div>
+
+                <div class="success-message" id="successMessage" style="display: none;">
+                    <i class="fas fa-check-circle"></i>
+                    <strong>Great job!</strong> You've run your first Python code.
+                </div>
+            </div>
+
+
+
+            <div class="navigation-buttons">
+                <button class="btn-prev" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+                <button class="btn-next">Next Lesson <i class="fas fa-arrow-right"></i></button>
+            </div>
+        </div>
+
+
+        <!-- Right Sidebar - Video Player -->
+        <aside class="course-video">
+            <div class="video-container">
+                <div class="video-placeholder">
+                    <div class="video-overlay">
+                        <i class="fas fa-play-circle"></i>
+                        <h3>AI Python for Beginners</h3>
+                        <p>Introduction to the Course</p>
+                    </div>
+                    <img src="https://via.placeholder.com/640x360/4a5568/ffffff?text=Video+Player"
+                        alt="Video Placeholder">
+                </div>
+                <div class="video-duration">3:00</div>
+            </div>
+            <div class="video-controls">
+                <button class="btn-transcript">
+                    <i class="fas fa-align-left"></i> Show Transcript
+                </button>
+                <button class="btn-next-lesson">
+                    Next Lesson
+                </button>
+            </div>
+        </aside>
+
+    </div>
+
+    <script>
+        // Lesson content database
+        var lessonContent = {
+            '1-1': {
+                title: 'Lesson 1: Introduction',
+                description: 'Welcome to Python and AI for Beginners!',
+                content: `<p>🤖 Your Journey into AI Python: Why Coding Matters Now
+                    Welcome to the AI Python for Beginners course! Regardless of your current profession or future
+                    career aspirations—even if becoming an AI developer or software engineer isn't your goal—I'm
+                    thrilled you've joined us. By the time you finish this program, my hope is to demonstrate that
+                    writing code isn't just useful; it's enjoyable and a powerful asset for your daily work and personal
+                    life.
+                    The Changing Equation of Coding
+                    A decade ago, if someone had asked me, "Should everyone learn to code?" my answer would have been
+                    "No." Back then, the learning curve was steep, and the practical applications for people outside of
+                    highly technical roles weren't always clear.
+                <p>
+                    Whatever your job role and career goals, including if it is **not to become an AI developer or
+                    software engineer**, I'm glad you're here. And I hope to show you by the end of this course that
+                    **coding is useful, fun, and can help you in your day-to-day work and life.**
+                </p>
+
+                <h3>The Shift: Why Coding is Essential Now</h3>
+                <p>
+                    Ten years ago, if you'd asked me if everyone should learn to code, I would have said "no." Because
+                    learning to code took quite a bit of work and it wasn't clear, you know, what exactly the use cases
+                    were for people beyond really technical roles.
+                </p>
+                <p>
+                    But the **rise of AI**, specifically tools like **ChatGPT and Generative AI**, I think that equation
+                    has changed. I'm seeing that many people in **journalism, marketing, or business research or
+                    investing or administrative roles** are finding it useful to write a little bit of code in their
+                    work and get things done.
+                </p>
+                <p>
+                    And if you can learn to write just a little bit of code, you'd be **much more effective at many
+                    types of work**, especially knowledge work.
+                </p>
+
+                <h3>Coding with an AI Companion</h3>
+                <p>
+                    Since the release of ChatGPT and the wide availability of many generative AI tools, the way that
+                    people write code is different. Specifically with a **chatbot companion, you never have to code
+                    alone.** So it's as if you always have a buddy next to you that's actually pretty good at coding and
+                    can help you along with writing code.
+                </p>
+                <p>
+                    And this makes learning to code much easier. And later, once you're writing code yourself, an AI
+                    chatbot also makes your job much easier because you have this **experienced buddy to help you along
+                    every single step.** So these new AI tools have dramatically reduced the cost and effort needed to
+                    learn to code.
+                </p>
+
+                <h3>Future-Proofing Your Skills</h3>
+                <p>
+                    Now, there are a lot of coding courses out there on the internet. One thing that distinguishes this
+                    course from many of those out there is you learn this new methodology of working alongside a chatbot
+                    while you code **right away**. So you'd be learning skills that I think would be much more **future
+                    proof** and more aligned with the way that professional coding is trending.
+                </p>
+                <p>
+                    With the widespread availability of AI, what you find is that you can really get AI to do a lot more
+                    for you, if you know just a little bit of coding. And that means that because AI is impacting pretty
+                    much all knowledge work, if you work in a knowledge worker type of job role, or maybe even if you
+                    don't, your ability to write just a little bit of code will be, I think, a **significant
+                    productivity enhancer** for you.
+                </p>
+
+                <h3>Enjoy the Journey!</h3>
+                <p>
+                    So, I hope you enjoy the course and beyond it being practical and useful. I also don't want to
+                    understate that I think coding is just **really fun**. When you learn to code just a little bit, you
+                    get to do a lot of stuff that you just couldn't before. And I and many of my friends find that
+                    really fun. And I hope you will too.
+                </p>
+                <p>
+                    So let's go to the next video where you learn **what is a programming language** and how that lets
+                    us get computers to do more for us. I'll see you in the next video.
+                </p>`,
+                code: '# Welcome to Python!\nprint("Hello, AI World!")',
+                videoTitle: 'Introduction to the Course',
+                videoDuration: '3:00'
+            },
+            '1-2': {
+                title: 'Lesson 2: What is computer programming?',
+                description: 'Understanding the basics of programming',
+                content: `
+            <p>
+                **Computer programming is both the art and the science of crafting highly precise instructions** that direct a computer to execute a desired task. The remarkable thing is that when these instructions are well-written, computers can achieve an extraordinary amount.
+            </p>
+
+            <h3>Code in Everyday Life: Practical Applications</h3>
+            <p>
+                I recently heard a compelling story from a fellow traveler. She, an executive assistant, took the initiative to **learn coding and developed a small program** to monitor her executive's calendar. If any unusual changes occurred, she'd receive an instant notification, allowing her to promptly correct the schedule. This is a perfect example of how coding can be used by anyone to make their job **significantly more efficient**.
+            </p>
+            <p>
+                In nearly every profession, gaining the ability to tell computers what you want them to do will enable you to accomplish much more.
+            </p>
+
+            <p>
+                More broadly, programming has been a fundamental driver in advancing human understanding and capability. All these achievements are powered by people writing code:
+            <ul>
+            <li>The stunning images from the **Hubble Space Telescope** that unveil the universe's mysteries are processed and analyzed using programs written by scientists.</li>
+            <li>Particle physics breakthroughs, like the discovery of the **Higgs boson**, were only possible because software was developed to analyze the massive amounts of data collected by particle accelerators.</li>
+            <li>Our daily reliance on the **Internet**, from sending a simple text message on your phone to using GPS for navigation, is entirely dependent on computer programs.</li>
+            <li>Even **assistive technologies** like speech recognition and eye-tracking, which have profoundly improved the lives of people with disabilities, are products of dedicated coding efforts.</li>
+            </ul>
+            </p>
+
+            <h3>The Core Concept: Instructions and Recipes</h3>
+            <p>
+                At its heart, programming is about acquiring the skill to **issue commands to machines**. Computer programs are essentially **detailed sequences of instructions** that map out exactly how a computer should complete a task. Think of it like a **cooking recipe** . A recipe gives you step-by-step guidance to consistently achieve a delicious meal; a program provides the computer with steps to achieve a specific computational outcome.
+            </p>
+
+            <p>
+                **Being able to program gives you a crucial competitive advantage.** Many individuals now use programming to **automate repetitive tasks**, such as taking multiple PDF documents and automatically extracting specific data points into a spreadsheet.
+            </p>
+
+            <h3>Leveraging AI with Code</h3>
+            <p>
+                Beyond analyzing existing data, programming helps you generate **entirely new insights**. Teams, including business analysts, are increasingly writing code to instruct **AI tools** like ChatGPT to automatically browse and download web pages, then synthesize that information into detailed market insight reports.
+            </p>
+            <p>
+                As you learn to code, you'll become better at identifying and automating these types of tasks using AI yourself. In fact, through programming, you can command your computer to directly interact with AI tools like ChatGPT and other language models. With just a few lines of code, **your computer can now use the AI** to help it execute complex tasks.
+            </p>
+            <p>
+                The central objective of writing code in this course is to learn how to direct your computer to use AI tools, specifically through the Python language, so it can achieve more for you.
+            </p>
+
+            <h3>Why Python?</h3>
+            <p>
+                Most AI developers, myself included, rely on **Python** constantly. It's currently the **most popular programming language** globally.
+            </p>
+            <p>
+                Python boasts an incredibly **supportive global community**. If you encounter a problem, there are countless developers who can offer help or who have already documented a solution to a similar issue. Furthermore, modern chatbots like ChatGPT, Anthropic's Claude, and Google's Gemini are highly proficient in Python, making them **excellent coding companions** that can assist you when you get stuck. I strongly encourage you to use a chatbot to help solve problems as you learn.
+            </p>
+            <p>
+                Today, Python is the engine powering a vast number of AI applications:
+                <ul>
+                    <li>It runs in many **self-driving cars**.</li>
+                    <li>It drives the software behind modern **chatbots and virtual assistants**.</li>
+                    <li>It is used across diverse sectors, including **smart agriculture, healthcare, and financial services**.</li>
+                </ul>
+            </p>
+            <p>
+                The use of Python extends far beyond AI; many popular **websites, smartphone apps, and video games** rely on it. When you learn Python, you are mastering one of the most critical and versatile programming tools available, no matter what your ultimate career goals are.
+            </p>
+
+            <p>
+                I hope this course, AI Python for Beginners, marks the exciting beginning of your programming journey, setting you up to continually expand your skills and do more with code. With that, let's move on to the next video, where we'll explore how chatbots interact with Python.
+            </p>`,
+                code: '# This is a comment\nprint("Programming is fun!")',
+                videoTitle: 'What is Programming?',
+                videoDuration: '5:00'
+            },
+
+
+            '1-3': {
+                title: 'Lesson 3: Let\'s try your first program',
+                description: 'Execute your first Python code',
+                content: `<p>Now it's your turn to try running Python code!</p>
+                    <p>Hit the play button on the video next to this Jupyter notebook to start the video and follow along as Andrew explains how to work through this lesson.</p>
+                    
+                    <h3>1. Hello, World!</h3>
+                    <p>Below is the code for the "Hello, World!" program that you saw the chatbot write in the previous video.</p>
+                    <p>To run the code, click anywhere into the cell (the box with the code inside), and then type <kbd>Shift</kbd> + <kbd>Enter</kbd> (<kbd>Shift</kbd> + <kbd>Return</kbd> on a Mac) to execute.</p>
+                    
+                    {{CODE_CELL:print("Hello, World!")}}
+                    
+                    <p><strong>Congratulations!</strong> You have just joined the millions of people who have started their computer programming adventure by running this simple code!</p>
+                    
+                    <h3>2. Hello, you!</h3>
+                    <p>Let's create python code to say hello to you, instead of the world. Here are the steps to follow along with Andrew in the video:</p>
+                    <ol>
+                        <li>Open the chatbot</li>
+                        <li>Type in this prompt (substituting your name for mine)</li>
+                    </ol>
+                    
+                    <div class="prompt-box">
+                        <pre>Modify the code below to have it say hello to me.
+
+print("Hello, World!")
+
+My name is Andrew</pre>
+                    </div>
+                    
+                    <ol start="3">
+                        <li>Paste the output code in the cell below using <kbd>Ctrl</kbd>+<kbd>V</kbd> (<kbd>Command</kbd>+<kbd>C</kbd> on a Mac)</li>
+                        <li>Press <kbd>Shift</kbd> + <kbd>Enter</kbd> to submit your prompt</li>
+                    </ol>
+                    
+                    <p>Once the chatbot has returned the code to you, you can copy and paste it into the cell below. Only copy the code in the black box - don't copy any conversation text that the chatbot writes.</p>
+                    
+                    {{CODE_CELL:# PASTE CODE FROM CHATBOT ON THE NEXT LINE IN THIS CELL\n}}
+                    
+                    <p>You should see Python print out "Hello," followed by your name above.</p>
+                    <p>One other thing to notice here - when you run a code cell, the little square brackets to the left of the cell will change to a number.</p>
+                    
+                    <h3>3. Say hello to someone you love!</h3>
+                    <p>Copy and paste (or just type out directly) the "Hello, World!" code in the cell below. Then modify the text between the quotation to say hello to your best friend, or favorite pet, or anyone else you love!</p>
+                    
+                    {{CODE_CELL:# ADD YOUR CODE ON THE NEXT LINE\n}}
+                    
+                    <h3>4. Comments in code</h3>
+                    <p>You may be wondering what the text is in the cells above that starts with the <code>#</code> hash or pound symbol. This is a comment line. It tells Python that it can ignore anything that follows on that line after the <code>#</code> symbol. Comments are used to help other humans understand what your code does.</p>
+                    
+                    <p>Try running the next cell by pressing <kbd>Shift</kbd>+<kbd>Enter</kbd> - what do you think will happen?</p>
+                    
+                    {{CODE_CELL:# THIS IS A COMMENT - PYTHON WILL IGNORE THIS LINE}}
+                    
+                    <p>The cell above runs just like the code you ran before - you saw the <code>*</code> appear to the left of the cell, and then change to a number. But this time nothing appeared on the screen.</p>
+                    
+                    <p>A comment line is a valid piece of Python code. It tells Python to ignore what follows. Here, Python followed that command exactly, running the code, ignoring the text, and because the code had no output to return to you, it seemed like "nothing happened."</p>
+                    
+                    <p>Click into the cell below and click <kbd>Shift</kbd>+<kbd>Enter</kbd> to run the code - make sure to ask yourself what you think will happen first, and then see if you were right.</p>
+                    
+                    {{CODE_CELL:print("This is a print statement!")}}
+                    
+                    <p>Now click into the cell again and type a <code>#</code> at the start of the line. What do you think this change will result in? Run the cell by pressing <kbd>Shift</kbd> + <kbd>Enter</kbd> to check!</p>
+                    
+                    <p>You can have multiple comment lines in your code, including one after another, and dispersed throughout your code:</p>
+                    
+                    {{CODE_CELL:# This is an example of code with multiple\n# comments, including this one which\n# spans multiple lines\nprint("Hello, Andrew!")\n# Follow up with an additional print command\nprint("How is your day going?")}}
+                    
+                    <h3>5. Making mistakes is no big deal!</h3>
+                    <p>Run the code in the next cell to see an example of how Python responds to code with an error in it.</p>
+                    
+                    {{CODE_CELL:print("Hello, Andrew!)}}
+                    
+                    <p>You can ask the chatbot to help you fix this code:</p>
+                    <ol>
+                        <li>Open the chatbot</li>
+                        <li>Enter the following prompt:</li>
+                    </ol>
+                    
+                    <div class="prompt-box">
+                        <pre>What is wrong with this code, and how do I fix it?
+
+print("Hello, Andrew!)</pre>
+                    </div>
+                    
+                    <p>Fix the code in the next cell based on the chatbot's recommendation and run the cell using <kbd>Shift</kbd>+<kbd>Enter</kbd> to see if the fix worked!</p>
+                    
+                    {{CODE_CELL:# Edit the code on the next line to correct the error\nprint("Hello, Andrew!)}}
+                    
+                    <h3>Practice for yourself!</h3>
+                    <p>You can practice what you've learned in this lesson by trying out the code exercises below. For each one, follow the instructions in the comment line, then write your code on the next line below the comment. Once you are done, run your code by typing <kbd>Shift</kbd> + <kbd>Enter</kbd>. You can do this as many times as you like.</p>
+                    
+                    {{CODE_CELL:# Write code that displays your favorite color\n}}
+                    
+                    {{CODE_CELL:# Write code that answers the question "How are you feeling today?"\n}}
+                    
+                    {{CODE_CELL:# Alter your code from the previous cell so that it will cause an error when you run it\n}}
+                    
+                    {{CODE_CELL:# Ask an LLM to help you fix the error in the code in the previous cell (or fix yourself) and\n# then type the corrected code on the next line:\n}}`,
+                code: 'print("Hello, World!")',
+                videoTitle: 'Running your first program',
+                videoDuration: '8:02',
+                hasExtraContent: true
+            },
+            '1-4': {
+                title: 'Lesson 4: Data in Python',
+                description: 'Understanding different types of data',
+                content: `<p>In Python, data comes in different types. The main types you'll work with are:</p>
+                    <ul>
+                        <li><strong>Strings</strong> - Text data enclosed in quotes</li>
+                        <li><strong>Integers</strong> - Whole numbers</li>
+                        <li><strong>Floats</strong> - Decimal numbers</li>
+                        <li><strong>Booleans</strong> - True or False values</li>
+                    </ul>
+                    <p>Let's explore each type with examples.</p>
+                    
+                    <h3>Strings</h3>
+                    <p>Strings represent text and are enclosed in single or double quotes:</p>
+                    {{CODE_CELL:print("Hello, World!")}}
+                    {{CODE_CELL:print('Python is fun!')}}
+                    
+                    <h3>Numbers</h3>
+                    <p>Python can work with both integers (whole numbers) and floats (decimals):</p>
+                    {{CODE_CELL:print(42)}}
+                    {{CODE_CELL:print(3.14159)}}
+                    
+                    <h3>Booleans</h3>
+                    <p>Booleans represent True or False values:</p>
+                    {{CODE_CELL:print(True)}}
+                    {{CODE_CELL:print(False)}}`,
+                code: 'print("Hello, World!")',
+                videoTitle: 'Data Types in Python',
+                videoDuration: '6:00'
+            },
+            '1-5': {
+                title: 'Lesson 5: Combining text and calculations',
+                description: 'Mix strings and numbers in your output',
+                content: `<p>One of the most powerful features in Python is the ability to combine text with calculations. This is called <strong>string formatting</strong>.</p>
+                    
+                    <h3>Using f-strings</h3>
+                    <p>F-strings (formatted string literals) let you embed expressions inside string literals:</p>
+                    {{CODE_CELL:name = "Alice"\\nprint(f"Hello, {name}!")}}
+                    
+                    <h3>Combining text with calculations</h3>
+                    <p>You can perform calculations directly inside f-strings:</p>
+                    {{CODE_CELL:price = 19.99\\nquantity = 3\\nprint(f"Total cost: \${price * quantity}")}}
+                    
+                    <h3>Practice</h3>
+                    <p>Try creating your own combinations:</p>
+                    {{CODE_CELL:# Create a message that includes your age and calculates your age in 10 years\\n}}`,
+                code: 'name = "Python"\\nprint(f"Hello, {name}!")',
+                videoTitle: 'String Formatting',
+                videoDuration: '7:00'
+            },
+            '1-6': {
+                title: 'Lesson 6: Variables',
+                description: 'Store and reuse data with variables',
+                content: `<p>Variables are like labeled containers that store data. They let you save values and reuse them throughout your program.</p>
+                    
+                    <h3>Creating Variables</h3>
+                    <p>To create a variable, choose a name and assign it a value using the = sign:</p>
+                    {{CODE_CELL:message = "Hello, Python!"\\nprint(message)}}
+                    
+                    <h3>Variable Names</h3>
+                    <p>Variable names should be descriptive and follow these rules:</p>
+                    <ul>
+                        <li>Use lowercase letters and underscores</li>
+                        <li>Start with a letter, not a number</li>
+                        <li>No spaces allowed</li>
+                    </ul>
+                    {{CODE_CELL:user_name = "Alice"\\nuser_age = 25\\nprint(f"{user_name} is {user_age} years old")}}
+                    
+                    <h3>Updating Variables</h3>
+                    <p>You can change the value stored in a variable:</p>
+                    {{CODE_CELL:count = 5\\nprint(f"Count is: {count}")\\ncount = 10\\nprint(f"Count is now: {count}")}}
+                    
+                    <h3>Practice</h3>
+                    {{CODE_CELL:# Create variables for your name, favorite color, and lucky number\\n# Then print a message using all three\\n}}`,
+                code: 'name = "Student"\\nprint(f"Welcome, {name}!")',
+                videoTitle: 'Working with Variables',
+                videoDuration: '8:00'
+            },
+            '1-7': {
+                title: 'Lesson 7: Building LLM prompts with variables',
+                description: 'Create dynamic prompts for AI models',
+                content: `<p>One of the most practical uses of variables is building prompts for Large Language Models (LLMs) like ChatGPT. Variables let you create dynamic, reusable prompts.</p>
+                    
+                    <h3>Basic Prompt with Variables</h3>
+                    <p>Instead of writing the same prompt over and over, use variables:</p>
+                    {{CODE_CELL:topic = "Python programming"\\nprompt = f"Explain {topic} in simple terms"\\nprint(prompt)}}
+                    
+                    <h3>Multi-part Prompts</h3>
+                    <p>Build complex prompts by combining multiple variables:</p>
+                    {{CODE_CELL:role = "expert teacher"\\ntopic = "machine learning"\\naudience = "beginners"\\n\\nprompt = f"Act as a {role}. Explain {topic} to {audience}."\\nprint(prompt)}}
+                    
+                    <h3>Template Prompts</h3>
+                    <p>Create reusable prompt templates:</p>
+                    {{CODE_CELL:task = "summarize"\\ncontent = "this article about AI"\\nlength = "3 sentences"\\n\\nprompt = f"Please {task} {content} in {length}."\\nprint(prompt)}}
+                    
+                    <h3>Practice</h3>
+                    {{CODE_CELL:# Create a prompt template for asking an LLM to write code\\n# Include variables for: programming language, task, and difficulty level\\n}}`,
+                code: 'topic = "AI"\\nprompt = f"Explain {topic}"\\nprint(prompt)',
+                videoTitle: 'LLM Prompt Engineering',
+                videoDuration: '9:00'
+            },
+            '1-8': {
+                title: 'Lesson 8: Functions: Actions on Data',
+                description: 'Perform operations on your data',
+                content: `<p>Functions are like tools that perform specific actions on data. Python has many built-in functions, and you can create your own!</p>
+                    
+                    <h3>Built-in Functions</h3>
+                    <p>Python provides many useful functions out of the box:</p>
+                    {{CODE_CELL:# len() tells you the length of a string\\ntext = "Hello, Python!"\\nprint(len(text))}}
+                    
+                    {{CODE_CELL:# upper() and lower() change text case\\nmessage = "Hello World"\\nprint(message.upper())\\nprint(message.lower())}}
+                    
+                    {{CODE_CELL:# type() tells you what type of data you have\\nprint(type(42))\\nprint(type("Hello"))\\nprint(type(3.14))}}
+                    
+                    <h3>String Methods</h3>
+                    <p>Strings have special functions called methods:</p>
+                    {{CODE_CELL:text = "  Python is awesome!  "\\nprint(text.strip())  # Remove spaces\\nprint(text.replace("awesome", "amazing"))}}
+                    
+                    <h3>Creating Your Own Functions</h3>
+                    <p>You can define custom functions to reuse code:</p>
+                    {{CODE_CELL:def greet(name):\\n    return f"Hello, {name}!"\\n\\nprint(greet("Alice"))\\nprint(greet("Bob"))}}
+                    
+                    <h3>Practice</h3>
+                    {{CODE_CELL:# Create a function that takes a person's name and age\\n# and returns a formatted message\\n}}`,
+                code: 'def greet(name):\\n    return f"Hello, {name}!"\\n\\nprint(greet("Python"))',
+                videoTitle: 'Functions and Methods',
+                videoDuration: '10:00'
+            },
+            '1-9': {
+                title: 'Lesson 9: Working with Dynamic Values (Variables)',
+                description: 'Master variable manipulation and updates',
+                content: `<p>Variables are dynamic - you can change their values and use them in calculations.</p>
+                    <h3>Variable Assignment</h3>
+                    <p>Assign and reassign values to variables:</p>
+                    {{CODE_CELL:score = 0\\nprint(f"Initial score: {score}")\\nscore = 100\\nprint(f"New score: {score}")}}
+                    <h3>Practice</h3>
+                    {{CODE_CELL:# Create a variable and update it\\n}}`,
+                code: 'x = 10\\nx = x + 5\\nprint(x)',
+                videoTitle: 'Dynamic Variables',
+                videoDuration: '8:00'
+            },
+            '1-10': {
+                title: 'Lesson 10: Constructing LLM Prompts Using Variables',
+                description: 'Build dynamic AI prompts',
+                content: `<p>Use variables to create flexible, reusable prompts for AI models.</p>
+                    <h3>Dynamic Prompts</h3>
+                    {{CODE_CELL:task = "summarize"\\ntopic = "AI ethics"\\nprompt = f"Please {task} the topic of {topic}"\\nprint(prompt)}}
+                    <h3>Practice</h3>
+                    {{CODE_CELL:# Create your own prompt template\\n}}`,
+                code: 'topic = "Python"\\nprompt = f"Explain {topic}"\\nprint(prompt)',
+                videoTitle: 'LLM Prompt Engineering',
+                videoDuration: '9:00'
+            },
+            '1-11': {
+                title: 'Lesson 11: Defining Functions: Operations on Data',
+                description: 'Create reusable code with functions',
+                content: `<p>Functions let you package code for reuse.</p>
+                    <h3>Creating Functions</h3>
+                    {{CODE_CELL:def calculate_total(price, quantity):\\n    return price * quantity\\n\\ntotal = calculate_total(19.99, 3)\\nprint(f"Total: \${total}")}}
+                    <h3>Practice</h3>
+                    {{CODE_CELL:# Create your own function\\n}}`,
+                code: 'def greet(name):\\n    return f"Hello, {name}!"\\nprint(greet("World"))',
+                videoTitle: 'Functions in Python',
+                videoDuration: '10:00'
+            },
+            '2-1': {
+                title: 'Lesson 1: Variables and Data Types',
+                description: 'Learn about storing and using data',
+                content: `<p>Variables are containers for storing data values.</p>
+                    <p>Python has several data types: strings, integers, floats, and booleans.</p>`,
+                code: '# Variables and data types\nname = "Alice"  # string\nage = 25  # integer\nheight = 5.6  # float\nis_student = True  # boolean\n\nprint(f"{name} is {age} years old")',
+                videoTitle: 'Variables and Data Types',
+                videoDuration: '7:00'
+            },
+            '2-2': {
+                title: 'Lesson 2: Operators and Expressions',
+                description: 'Perform calculations and comparisons',
+                content: `<p>Operators allow you to perform operations on variables and values.</p>
+                    <p>Common operators include +, -, *, /, and comparison operators like ==, >, <.</p>`,
+                code: '# Arithmetic operators\nx = 10\ny = 3\nprint(f"{x} + {y} = {x + y}")\nprint(f"{x} * {y} = {x * y}")',
+                videoTitle: 'Operators and Expressions',
+                videoDuration: '6:00'
+            },
+            '2-3': {
+                title: 'Lesson 3: Control Flow - If/Else',
+                description: 'Make decisions in your code',
+                content: `<p>Control flow statements let your program make decisions.</p>
+                    <p>Use if, elif, and else to execute different code based on conditions.</p>`,
+                code: '# If/else statements\nage = 18\n\nif age >= 18:\n    print("You are an adult")\nelse:\n    print("You are a minor")',
+                videoTitle: 'If/Else Statements',
+                videoDuration: '8:00'
+            },
+            '2-4': {
+                title: 'Lesson 4: Loops - For and While',
+                description: 'Repeat actions efficiently',
+                content: `<p>Loops allow you to repeat code multiple times.</p>
+                    <p>For loops iterate over sequences, while loops run until a condition is false.</p>`,
+                code: '# For loop\nfor i in range(5):\n    print(f"Count: {i}")\n\n# While loop\ncount = 0\nwhile count < 3:\n    print(f"While: {count}")\n    count += 1',
+                videoTitle: 'Loops in Python',
+                videoDuration: '9:00'
+            },
+            '2-5': {
+                title: 'Lesson 5: Functions',
+                description: 'Create reusable code blocks',
+                content: `<p>Functions are reusable blocks of code that perform specific tasks.</p>
+                    <p>They help organize your code and make it more maintainable.</p>`,
+                code: '# Define a function\ndef greet(name):\n    return f"Hello, {name}!"\n\n# Call the function\nmessage = greet("Python")\nprint(message)',
+                videoTitle: 'Functions in Python',
+                videoDuration: '10:00'
+            },
+            '2-6': {
+                title: 'Lesson 6: Evaluating and Comparing Information',
+                description: 'Work with comparison operators',
+                content: `<p>Learn to compare values and make decisions based on comparisons.</p>
+                    <h3>Comparison Operators</h3>
+                    <p>Use operators like ==, !=, >, <, >=, <= to compare values:</p>
+                    {{CODE_CELL:age = 18\\nif age >= 18:\\n    print("Adult")\\nelse:\\n    print("Minor")}}`,
+                code: 'x = 10\\ny = 20\\nprint(x < y)',
+                videoTitle: 'Comparison Operators',
+                videoDuration: '8:00'
+            },
+            '2-7': {
+                title: 'Lesson 7: Guiding AI Decision-Making with Conditional Logic',
+                description: 'Use if/else statements for AI decisions',
+                content: `<p>Conditional logic helps AI make decisions based on data.</p>
+                    <h3>If/Else Statements</h3>
+                    {{CODE_CELL:sentiment = "positive"\\nif sentiment == "positive":\\n    print("Great feedback!")\\nelse:\\n    print("Needs improvement")}}
+                    <h3>Practice</h3>
+                    {{CODE_CELL:# Create conditional logic\\n}}`,
+                code: 'score = 85\\nif score >= 90:\\n    print("A")\\nelif score >= 80:\\n    print("B")\\nelse:\\n    print("C")',
+                videoTitle: 'Conditional Logic',
+                videoDuration: '10:00'
+            },
+            // Module 3: Object Oriented Programming
+            '3-1': {
+                title: 'Lesson 1: Introduction to OOP',
+                description: 'Understanding Object-Oriented Programming',
+                content: `<p>Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects".</p>
+                    <p>Objects can contain data (attributes) and code (methods).</p>`,
+                code: '# OOP Concept\n# Everything in Python is an object\nx = 5\nprint(type(x))  # <class "int">',
+                videoTitle: 'Introduction to OOP',
+                videoDuration: '6:00'
+            },
+            '3-2': {
+                title: 'Lesson 2: Classes and Objects',
+                description: 'Creating blueprints for objects',
+                content: `<p>A Class is like a blueprint for creating objects.</p>
+                    <p>An Object is an instance of a Class.</p>`,
+                code: 'class Dog:\n    def __init__(self, name):\n        self.name = name\n\n    def bark(self):\n        return "Woof!"\n\nmy_dog = Dog("Buddy")\nprint(my_dog.name)\nprint(my_dog.bark())',
+                videoTitle: 'Classes and Objects',
+                videoDuration: '9:00'
+            },
+            '3-3': {
+                title: 'Lesson 3: Inheritance',
+                description: 'Reusing code from parent classes',
+                content: `<p>Inheritance allows us to define a class that inherits all the methods and properties from another class.</p>
+                    <p>Parent class is the class being inherited from, also called base class.</p>`,
+                code: 'class Animal:\n    def speak(self):\n        print("Animal speaks")\n\nclass Cat(Animal):\n    def speak(self):\n        print("Meow")\n\nmy_cat = Cat()\nmy_cat.speak()',
+                videoTitle: 'Inheritance in Python',
+                videoDuration: '7:00'
+            },
+            '3-4': {
+                title: 'Lesson 4: Encapsulation',
+                description: 'Hiding internal details',
+                content: `<p>Encapsulation describes the idea of wrapping data and the methods that work on data within one unit.</p>
+                    <p>This puts restrictions on accessing variables and methods directly and can prevent the accidental modification of data.</p>`,
+                code: 'class BankAccount:\n    def __init__(self):\n        self.__balance = 0  # Private variable\n\n    def deposit(self, amount):\n        self.__balance += amount\n        print(f"Deposited {amount}")\n\naccount = BankAccount()\naccount.deposit(100)',
+                videoTitle: 'Encapsulation Explained',
+                videoDuration: '6:00'
+            },
+            '3-5': {
+                title: 'Lesson 5: Extracting Location Details from Text',
+                description: 'Parse location data from text entries',
+                content: `<p>Learn to extract specific information like locations from text data.</p>
+                    <h3>Text Parsing</h3>
+                    {{CODE_CELL:text = "Visit Paris, France"\\nlocation = text.split(",")[0].replace("Visit ", "")\\nprint(location)}}`,
+                code: 'text = "Meeting in Tokyo"\\nlocation = text.split("in ")[1]\\nprint(location)',
+                videoTitle: 'Extracting Location Data',
+                videoDuration: '9:00'
+            },
+            '3-6': {
+                title: 'Lesson 6: Travel Planning Using CSV Data',
+                description: 'Work with spreadsheet data',
+                content: `<p>CSV files are commonly used for storing tabular data.</p>
+                    <h3>Reading CSV Data</h3>
+                    <p>Learn to import and process CSV files for travel planning.</p>`,
+                code: '# CSV data processing\\nimport csv\\n# Process travel data',
+                videoTitle: 'Working with CSV Files',
+                videoDuration: '11:00'
+            },
+            '3-7': {
+                title: 'Lesson 7: Converting Code into Reusable Routines',
+                description: 'Create functions from repetitive code',
+                content: `<p>Turn repetitive code into reusable functions.</p>
+                    <h3>Function Creation</h3>
+                    {{CODE_CELL:def process_location(text):\\n    return text.strip().upper()\\n\\nresult = process_location("  paris  ")\\nprint(result)}}`,
+                code: 'def format_name(name):\\n    return name.title()\\nprint(format_name("john doe"))',
+                videoTitle: 'Creating Reusable Functions',
+                videoDuration: '10:00'
+            },
+            '3-8': {
+                title: 'Lesson 8: Generating Comprehensive Itineraries',
+                description: 'Build complete travel itineraries',
+                content: `<p>Combine all your skills to generate detailed travel plans.</p>
+                    <h3>Itinerary Generation</h3>
+                    <p>Use data processing and AI to create personalized itineraries.</p>`,
+                code: 'destinations = ["Paris", "Rome", "Tokyo"]\\nfor dest in destinations:\\n    print(f"Day in {dest}")',
+                videoTitle: 'Building Itineraries',
+                videoDuration: '12:00'
+            },
+            '3-9': {
+                title: 'Lesson 9: Final Project Submission and Showcase',
+                description: 'Complete and present your project',
+                content: `<p>Showcase your learning by completing a final project.</p>
+                    <h3>Project Requirements</h3>
+                    <p>Apply all concepts learned to build a complete application.</p>`,
+                code: '# Your final project code here',
+                videoTitle: 'Final Project',
+                videoDuration: '15:00'
+            },
+            // Module 4: Introduction to AI
+            '4-1': {
+                title: 'Lesson 1: What is AI?',
+                description: 'Introduction to Artificial Intelligence',
+                content: `<p>Artificial Intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems.</p>
+                    <p>Specific applications of AI include expert systems, natural language processing, speech recognition and machine vision.</p>`,
+                code: '# AI is everywhere!\nai_types = ["Narrow AI", "General AI", "Super AI"]\nprint(f"Types of AI: {ai_types}")',
+                videoTitle: 'What is Artificial Intelligence?',
+                videoDuration: '5:00'
+            },
+            '4-2': {
+                title: 'Lesson 2: Machine Learning Basics',
+                description: 'How machines learn from data',
+                content: `<p>Machine Learning is a subset of AI that provides systems the ability to automatically learn and improve from experience without being explicitly programmed.</p>
+                    <p>It focuses on the development of computer programs that can access data and use it learn for themselves.</p>`,
+                code: '# Simple ML concept: Linear Regression (y = mx + c)\ndef predict(x, m, c):\n    return m * x + c\n\nresult = predict(5, 2, 1)\nprint(f"Prediction: {result}")',
+                videoTitle: 'Machine Learning Basics',
+                videoDuration: '10:00'
+            },
+            '4-3': {
+                title: 'Lesson 3: Working with Data',
+                description: 'Data is the fuel for AI',
+                content: `<p>Data is crucial for training AI models. In Python, we often use libraries like Pandas and NumPy to work with data.</p>
+                    <p>Data needs to be cleaned and preprocessed before it can be used.</p>`,
+                code: '# Working with a simple dataset (list)\ndata = [10, 20, 30, 40, 50]\naverage = sum(data) / len(data)\nprint(f"Average value: {average}")',
+                videoTitle: 'Working with Data',
+                videoDuration: '8:00'
+            },
+            '4-4': {
+                title: 'Lesson 4: Building Your First AI Model',
+                description: 'Creating a simple model',
+                content: `<p>Building an AI model involves selecting an algorithm, training it on data, and then using it to make predictions.</p>
+                    <p>We will use a simple rule-based approach for this first model.</p>`,
+                code: '# Simple Rule-Based "AI"\ndef simple_chatbot(user_input):\n    if "hello" in user_input.lower():\n        return "Hi there!"\n    elif "bye" in user_input.lower():\n        return "Goodbye!"\n    else:\n        return "I don\'t understand."\n\nprint(simple_chatbot("Hello computer"))',
+                videoTitle: 'Building Your First Model',
+                videoDuration: '12:00'
+            },
+            '4-5': {
+                title: 'Lesson 5: AI Ethics',
+                description: 'Responsible AI development',
+                content: `<p>As AI becomes more powerful, it is important to consider the ethical implications.</p>
+                    <p>Topics include bias, fairness, transparency, and privacy.</p>`,
+                code: '# AI Ethics Principle\nprinciples = ["Fairness", "Transparency", "Privacy", "Safety"]\nfor p in principles:\n    print(f"AI Principle: {p}")',
+                videoTitle: 'AI Ethics and Safety',
+                videoDuration: '6:00'
+            },
+            '4-6': {
+                title: 'Lesson 6: Accessing Data from the Web via APIs',
+                description: 'Fetch data from external APIs',
+                content: `<p>APIs (Application Programming Interfaces) let you access data from web services.</p>
+                    <h3>Making API Requests</h3>
+                    <p>Learn to fetch data from external sources.</p>`,
+                code: '# API request example\\nimport requests\\n# response = requests.get("https://api.example.com/data")',
+                videoTitle: 'Working with Web APIs',
+                videoDuration: '11:00'
+            },
+            '4-7': {
+                title: 'Lesson 7: Connecting to AI Models via APIs',
+                description: 'Integrate AI models using APIs',
+                content: `<p>Connect to AI services like OpenAI, Anthropic, or Google AI.</p>
+                    <h3>AI API Integration</h3>
+                    <p>Learn to use AI models programmatically.</p>`,
+                code: '# AI API example\\n# Connect to OpenAI or similar service',
+                videoTitle: 'AI Model APIs',
+                videoDuration: '12:00'
+            },
+            '4-8': {
+                title: 'Lesson 8: Setting Up Python on Your Machine (Optional)',
+                description: 'Install Python locally',
+                content: `<p>Learn to set up Python on your own computer.</p>
+                    <h3>Installation Steps</h3>
+                    <p>Download and install Python, set up virtual environments.</p>`,
+                code: '# Local Python setup\\nprint("Python is installed!")\\nprint("Ready to code locally")',
+                videoTitle: 'Python Installation Guide',
+                videoDuration: '10:00'
+            },
+            '4-9': {
+                title: 'Lesson 9: Course Summary and Conclusion',
+                description: 'Review and next steps',
+                content: `<p>Congratulations on completing AI Python for Beginners!</p>
+                    <h3>What You've Learned</h3>
+                    <p>Review all the concepts and plan your next steps in Python and AI.</p>`,
+                code: 'print("Course Complete!")\\nprint("Keep learning and building!")',
+                videoTitle: 'Course Conclusion',
+                videoDuration: '5:00'
+            }
+        };
+
+        // Completion tracking
+        let completedLessons = new Set();
+
+        // Lesson Order
+        const lessonOrder = [
+            '1-1', '1-2', '1-3', '1-4', '1-5', '1-6', '1-7', '1-8', '1-9', '1-10', '1-11',
+            '2-1', '2-2', '2-3', '2-4', '2-5', '2-6', '2-7',
+            '3-1', '3-2', '3-3', '3-4', '3-5', '3-6', '3-7', '3-8', '3-9',
+            '4-1', '4-2', '4-3', '4-4', '4-5', '4-6', '4-7', '4-8', '4-9'
+        ];
+
+        // Load lesson content
+        function loadLesson(lessonId) {
+            // Safety check - ensure lessonContent is initialized
+            if (typeof lessonContent === 'undefined') {
+                console.log('Lesson content not yet loaded, please wait...');
+                return;
+            }
+
+            const lesson = lessonContent[lessonId];
+            if (!lesson) {
+                console.log('Lesson content not yet available for:', lessonId);
+                return;
+            }
+
+            // Update active lesson
+            document.querySelectorAll('.lesson-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            const activeLesson = document.querySelector(`[data-lesson="${lessonId}"]`);
+            if (activeLesson) {
+                activeLesson.classList.add('active');
+            }
+
+            // Update lesson content
+            const lessonContentElement = document.querySelector('.lesson-content');
+            const codeInput = document.getElementById('codeInput');
+            const codeOutput = document.getElementById('codeOutput');
+            const successMessage = document.getElementById('successMessage');
+
+            // Update Jupyter header
+            document.querySelector('.jupyter-logo span').textContent = `Lesson_${lessonId.replace('-', '_')}`;
+
+            // Update main content
+            const lessonTextDiv = document.querySelector('.lesson-text');
+            lessonTextDiv.innerHTML = `
+                <h2>${lesson.title}</h2>
+                <p>${lesson.description}</p>
+                ${lesson.content}
+            `;
+
+            // Process CODE_CELL markers for lessons with multiple code cells
+            processCodeCells(lessonTextDiv);
+
+            // Update code editor
+            if (codeInput) {
+                codeInput.value = lesson.code;
+                codeOutput.innerHTML = '';
+                successMessage.style.display = 'none';
+            }
+
+            // Update video section
+            document.querySelector('.video-overlay h3').textContent = 'AI Python for Beginners';
+            document.querySelector('.video-overlay p').textContent = lesson.videoTitle;
+            document.querySelector('.video-duration').textContent = lesson.videoDuration;
+
+            // Scroll to top of content
+            document.querySelector('.course-main').scrollTop = 0;
+        }
+
+        // Process CODE_CELL markers and replace with actual code cells
+        function processCodeCells(container) {
+            const html = container.innerHTML;
+            const codeCellRegex = /\{\{CODE_CELL:(.*?)\}\}/g;
+            let cellIndex = 0;
+
+            const newHtml = html.replace(codeCellRegex, (match, code) => {
+                // Decode escaped newlines
+                const decodedCode = code.replace(/\\n/g, '\n');
+                const cellId = `code-cell-${cellIndex++}`;
+
+                return `
+                    <div class="inline-code-cell">
+                        <div class="code-cell">
+                            <div class="cell-label">In [ ]:</div>
+                            <textarea class="code-input" id="${cellId}" rows="3">${decodedCode}</textarea>
+                        </div>
+                        <button class="btn-run" onclick="runInlineCode('${cellId}')">
+                            <i class="fas fa-play"></i> Run
+                        </button>
+                        <div class="code-output" id="${cellId}-output"></div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = newHtml;
+        }
+
+        // Run code from inline code cells
+        function runInlineCode(cellId) {
+            const codeInput = document.getElementById(cellId);
+            const codeOutput = document.getElementById(`${cellId}-output`);
+
+            if (!codeInput || !codeOutput) return;
+
+            const code = codeInput.value;
+            codeOutput.innerHTML = '';
+
+            // Simulate code execution
+            setTimeout(() => {
+                try {
+                    // Simple Python print simulation
+                    if (code.includes('print(')) {
+                        const matches = code.match(/print\((.*?)\)/g);
+                        if (matches) {
+                            matches.forEach(match => {
+                                const content = match.match(/print\((.*?)\)/)[1];
+                                const cleanContent = content.replace(/['"]/g, '');
+                                codeOutput.innerHTML += `<div class="output-line">${cleanContent}</div>`;
+                            });
+                        }
+                    } else if (code.trim().startsWith('#') || code.trim() === '') {
+                        // Comment or empty - no output
+                        codeOutput.innerHTML = '';
+                    } else {
+                        codeOutput.innerHTML = '<div class="output-line">Code executed successfully</div>';
+                    }
+
+                    // Check for syntax errors (missing quotes)
+                    if (code.includes('print("') && !code.includes('")')) {
+                        throw new Error('SyntaxError: unterminated string literal');
+                    }
+                    if (code.includes("print('") && !code.includes("')")) {
+                        throw new Error('SyntaxError: unterminated string literal');
+                    }
+                } catch (error) {
+                    codeOutput.innerHTML = `<div class="output-line error">${error.message}</div>`;
+                }
+            }, 300);
+        }
+
+        // Mark lesson as completed
+        function markLessonComplete(lessonId) {
+            completedLessons.add(lessonId);
+            const lessonItem = document.querySelector(`[data-lesson="${lessonId}"]`);
+            if (lessonItem && !lessonItem.classList.contains('completed')) {
+                lessonItem.classList.add('completed');
+                const icon = lessonItem.querySelector('i');
+                icon.className = 'fas fa-check-circle';
+
+                // Update progress
+                updateProgress();
+            }
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const totalLessons = document.querySelectorAll('.lesson-item').length;
+            const completed = completedLessons.size;
+            const percentage = Math.round((completed / totalLessons) * 100);
+
+            document.querySelector('.progress-fill').style.width = percentage + '%';
+            document.querySelector('.progress-text').textContent = percentage + '%';
+
+            // Enable/Disable certificate button based on completion
+            const certBtn = document.getElementById('certificateBtn');
+            if (percentage === 100) {
+                certBtn.classList.remove('disabled');
+            } else {
+                certBtn.classList.add('disabled');
+            }
+        }
+
+        // Toggle module sections
+        function toggleModule(header) {
+            const moduleSection = header.parentElement;
+            const lessonList = moduleSection.querySelector('.lesson-list');
+            const icon = header.querySelector('i');
+
+            if (lessonList.style.display === 'none') {
+                lessonList.style.display = 'block';
+                icon.className = 'fas fa-chevron-down';
+            } else {
+                lessonList.style.display = 'none';
+                icon.className = 'fas fa-chevron-right';
+            }
+        }
+
+        // Run Python code (simple simulation)
+        function runCode() {
+            const code = document.getElementById('codeInput').value;
+            const output = document.getElementById('codeOutput');
+            const successMsg = document.getElementById('successMessage');
+
+            try {
+                // Simple print statement parser
+                const printMatch = code.match(/print\s*\(\s*["'](.+?)["']\s*\)/);
+                if (printMatch) {
+                    output.innerHTML = `<div class="output-line">${printMatch[1]}</div>`;
+                    successMsg.style.display = 'block';
+
+                    // Mark current lesson as completed when code runs successfully
+                    const activeLesson = document.querySelector('.lesson-item.active');
+                    if (activeLesson) {
+                        const lessonId = activeLesson.getAttribute('data-lesson');
+                        markLessonComplete(lessonId);
+                    }
+                } else {
+                    output.innerHTML = `<div class="output-line error">Error: Only print() statements are supported in this demo</div>`;
+                }
+            } catch (e) {
+                output.innerHTML = `<div class="output-line error">Error: ${e.message}</div>`;
+            }
+        }
+
+        // Allow Shift+Enter to run code
+        document.getElementById('codeInput').addEventListener('keydown', function (e) {
+            if (e.shiftKey && e.key === 'Enter') {
+                e.preventDefault();
+                runCode();
+            }
+        });
+
+        // Certificate modal functions
+        function openCertificateModal(event) {
+            if (event) event.preventDefault();
+
+            const certBtn = document.getElementById('certificateBtn');
+            if (certBtn.classList.contains('disabled')) {
+                return;
+            }
+            document.getElementById("certificateModal").style.display = "flex";
+        }
+
+        function closeCertificateModal() {
+            document.getElementById("certificateModal").style.display = "none";
+        }
+
+        // Initialize - load first lesson
+        window.addEventListener('load', function () {
+            loadLesson('1-1'); // Start with lesson 1-1 as default
+            updateProgress(); // Initialize progress
+        });
+    </script>
+
+</body>
+
+</html>
