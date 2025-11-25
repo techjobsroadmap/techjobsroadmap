@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Java Full Stack Development Mock Test - Test your knowledge of Java, Spring Boot, Maven, and full stack development fundamentals.">
+  <title>Java Full Stack Mock Test - Acctrum Gateway to IT</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .correct {
+      background-color: #d4edda;
+    }
+
+    .wrong {
+      background-color: #f8d7da;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="../index.html#home" class="logo">
+        <img src="../images/1.jpg" alt="Innolytics Logo" class="logo-img" />
+      </a>
+      <div class="nav-links">
+        <a href="../index.html#home">Home</a>
+        <a href="../index.html#courses">Courses</a>
+        <a href="../index.html#features">Features</a>
+        <a href="../index.html#testimonials">Testimonials</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../index.html#login">Login</a>
+      </div>
+    </nav>
+  </header>
+  <section class="mock-test" id="mock-test">
+    <h2>Java Full Stack Mock Test</h2>
+    <p>Answer all 15 questions. Choose the correct answer and submit to view your result.</p>
+
+    <div id="timer" style="font-weight: bold; margin: 10px 0; font-size: 18px;"></div>
+
+    <form id="mock-test-form"></form>
+
+    <button type="button" class="cta-button" onclick="submitTest()">Submit Test</button>
+    <button type="button" class="cta-button" onclick="restartTest()" style="display:none;" id="restart-btn">Try
+      Again</button>
+
+    <div id="result" style="display:none;">
+      <h3>Test Results</h3>
+      <p id="score"></p>
+    </div>
+  </section>
+
+  <script>
+    const questions = [
+      {
+        question: "What is the primary language used in Java Full Stack development?",
+        options: {
+          a: "Python",
+          b: "C++",
+          c: "Java",
+          d: "Ruby"
+        },
+        answer: "c"
+      },
+      {
+        question: "Which framework is commonly used in Java for backend development?",
+        options: {
+          a: "Django",
+          b: "Spring Boot",
+          c: "Laravel",
+          d: "Flask"
+        },
+        answer: "b"
+      },
+      {
+        question: "What does JVM stand for?",
+        options: {
+          a: "Java Virtual Method",
+          b: "Java Verified Machine",
+          c: "Java Virtual Machine",
+          d: "Java Variable Memory"
+        },
+        answer: "c"
+      },
+      {
+        question: "Which tool is used for building and managing Java-based projects?",
+        options: {
+          a: "NPM",
+          b: "Composer",
+          c: "Maven",
+          d: "Babel"
+        },
+        answer: "c"
+      },
+      {
+        question: "Which keyword is used to define a class in Java?",
+        options: {
+          a: "define",
+          b: "object",
+          c: "class",
+          d: "structure"
+        },
+        answer: "c"
+      },
+      {
+        question: "Which annotation is used to mark a class as a REST controller in Spring Boot?",
+        options: {
+          a: "@Controller",
+          b: "@RestController",
+          c: "@Service",
+          d: "@Configuration"
+        },
+        answer: "b"
+      },
+      {
+        question: "What does JSP stand for?",
+        options: {
+          a: "JavaScript Page",
+          b: "Java Server Pages",
+          c: "Java Secure Platform",
+          d: "Java Syntax Parser"
+        },
+        answer: "b"
+      },
+      {
+        question: "Which of the following is a relational database?",
+        options: {
+          a: "MongoDB",
+          b: "Cassandra",
+          c: "MySQL",
+          d: "Redis"
+        },
+        answer: "c"
+      },
+      {
+        question: "Which operator is used for comparison in Java?",
+        options: {
+          a: "=",
+          b: "==",
+          c: ":=",
+          d: "=>"
+        },
+        answer: "b"
+      },
+      {
+        question: "Which HTTP method is used to retrieve data?",
+        options: {
+          a: "POST",
+          b: "PUT",
+          c: "DELETE",
+          d: "GET"
+        },
+        answer: "d"
+      },
+      {
+        question: "Which front-end framework is commonly used with Java Full Stack?",
+        options: {
+          a: "Spring",
+          b: "React",
+          c: "Hibernate",
+          d: "JPA"
+        },
+        answer: "b"
+      },
+      {
+        question: "Which file in a Maven project defines dependencies?",
+        options: {
+          a: "build.gradle",
+          b: "pom.xml",
+          c: "package.json",
+          d: "settings.xml"
+        },
+        answer: "b"
+      },
+      {
+        question: "What is the default port for a Spring Boot application?",
+        options: {
+          a: "3000",
+          b: "5000",
+          c: "8080",
+          d: "9090"
+        },
+        answer: "c"
+      },
+      {
+        question: "Which Java concept supports reusability?",
+        options: {
+          a: "Abstraction",
+          b: "Polymorphism",
+          c: "Inheritance",
+          d: "Encapsulation"
+        },
+        answer: "c"
+      },
+      {
+        question: "Which tool is commonly used for version control in Java projects?",
+        options: {
+          a: "JIRA",
+          b: "Git",
+          c: "Docker",
+          d: "Tomcat"
+        },
+        answer: "b"
+      }
+    ];
+
+
+    let timerInterval;
+    let timeLeft = 600;
+
+    function shuffle(array) {
+      return array.sort(() => Math.random() - 0.5);
+    }
+
+    function startTimer() {
+      const timerDisplay = document.getElementById("timer");
+      timerInterval = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+        timerDisplay.textContent = `Time Left: ${minutes}:${seconds.toString().padStart(2, "0")}`;
+        timeLeft--;
+        if (timeLeft < 0) {
+          clearInterval(timerInterval);
+          submitTest(true);
+        }
+      }, 1000);
+    }
+
+    function renderQuestions() {
+      const form = document.getElementById("mock-test-form");
+      form.innerHTML = "";
+      const shuffledQuestions = shuffle([...questions]);
+
+      shuffledQuestions.forEach((q, i) => {
+        const questionDiv = document.createElement("div");
+        questionDiv.classList.add("question");
+        questionDiv.setAttribute("data-answer", q.answer);
+        questionDiv.innerHTML = `<p><strong>Q${i + 1}:</strong> ${q.question}</p>`;
+
+        const shuffledOptions = shuffle(Object.entries(q.options));
+        shuffledOptions.forEach(([key, value]) => {
+          const optionId = `q${i}_${key}`;
+          questionDiv.innerHTML += `
+            <label for="${optionId}">
+              <input type="radio" name="q${i}" id="${optionId}" value="${key}"> ${value}
+            </label><br>`;
+        });
+
+        form.appendChild(questionDiv);
+      });
+    }
+
+    function submitTest(autoSubmit = false) {
+      clearInterval(timerInterval);
+      let score = 0;
+
+      const questionsDivs = document.querySelectorAll(".question");
+      questionsDivs.forEach((div, i) => {
+        const correct = div.getAttribute("data-answer");
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        const inputs = div.querySelectorAll(`input[name="q${i}"]`);
+
+        inputs.forEach(input => {
+          const label = input.parentElement;
+          if (input.value === correct) {
+            label.classList.add("correct");
+          }
+          if (selected && input.checked && input.value !== correct) {
+            label.classList.add("incorrect");
+          }
+        });
+
+        if (selected && selected.value === correct) {
+          score++;
+        }
+      });
+
+      document.getElementById("score").textContent = `You got ${score} out of ${questionsDivs.length} correct.${autoSubmit ? " (Auto-submitted)" : ""}`;
+      document.getElementById("result").style.display = "block";
+      document.getElementById("restart-btn").style.display = "inline-block";
+    }
+
+    function restartTest() {
+      timeLeft = 900;
+      document.getElementById("result").style.display = "none";
+      document.getElementById("restart-btn").style.display = "none";
+      renderQuestions();
+      startTimer();
+    }
+
+    window.onload = function () {
+      // Initialize quiz
+      renderQuestions();
+      startTimer();
+
+      // Show chat box after 5 seconds
+      setTimeout(function () {
+        document.getElementById("whatsapp-chat-box").style.display = "block";
+      }, 5000);
+    };
+
+    function redirectToWhatsApp() {
+      // Replace with your full WhatsApp number (without '+' sign)
+      window.open("https://wa.me/917708808400", "_blank");
+    }
+
+    function closeChat() {
+      document.getElementById("whatsapp-chat-box").style.display = "none";
+    }
+  </script>
+</body>
+
+</html>
