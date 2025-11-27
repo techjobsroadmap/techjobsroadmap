@@ -1291,14 +1291,20 @@ body.course-page {
 
 .pdf-viewer-container {
     flex: 1;
-    overflow-y: auto;
+    position: relative;
+    /* Needed for absolute positioning of child */
     background: #fff;
     width: 100%;
     display: none;
     /* Hidden by default */
+    min-height: 0;
+    /* Fix for flexbox nesting */
 }
 
 .pdf-viewer-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     border: none;
