@@ -78,7 +78,7 @@
                         <li class="lesson-item" data-lesson="1-3" onclick="loadLesson('1-3')">
                             <i class="fas fa-circle"></i>
                             <div class="lesson-info">
-                                <span class="lesson-title">Let's try your first program</span>
+                                <span class="lesson-title">Collaborative Coding with AI Chatbots</span>
                                 <span class="lesson-duration">Video • 6 mins</span>
                             </div>
                         </li>
@@ -494,14 +494,8 @@ print("Hello, AI World!")</textarea>
                 </div>
                 <div class="video-duration">3:00</div>
             </div>
-            <div class="video-controls">
-                <button class="btn-transcript">
-                    <i class="fas fa-align-left"></i> Show Transcript
-                </button>
-                <button class="btn-next-lesson">
-                    Next Lesson
-                </button>
-            </div>
+            <!-- Video controls removed as requested -->
+            <div id="pdfContainer" class="pdf-viewer-container"></div>
         </aside>
 
     </div>
@@ -664,7 +658,7 @@ print("Hello, AI World!")</textarea>
 
 
             '1-3': {
-                title: 'Lesson 3: Let\'s try your first program',
+                title: 'Lesson 3: Running your first program',
                 description: 'Execute your first Python code',
                 content: `<p>Now it's your turn to try running Python code!</p>
                     <p>Hit the play button on the video next to this Jupyter notebook to start the video and follow along as Andrew explains how to work through this lesson.</p>
@@ -1236,9 +1230,36 @@ print("Hello, Andrew!)</pre>
             }
 
             // Update video section
-            document.querySelector('.video-overlay h3').textContent = 'AI Python for Beginners';
-            document.querySelector('.video-overlay p').textContent = lesson.videoTitle;
+            const videoPlaceholder = document.querySelector('.video-placeholder');
+            if (lessonId === '1-1') {
+                videoPlaceholder.innerHTML = `
+                    <video controls width="100%" height="100%" style="border-radius: 8px; background: #000;">
+                        <source src="../videos/Lesson1_1.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                `;
+            } else {
+                videoPlaceholder.innerHTML = `
+                    <div class="video-overlay">
+                        <i class="fas fa-play-circle"></i>
+                        <h3>AI Python for Beginners</h3>
+                        <p>${lesson.videoTitle}</p>
+                    </div>
+                    <img src="https://via.placeholder.com/640x360/4a5568/ffffff?text=Video+Player" alt="Video Placeholder">
+                `;
+            }
             document.querySelector('.video-duration').textContent = lesson.videoDuration;
+
+            // Update PDF section
+            const pdfContainer = document.getElementById('pdfContainer');
+            if (lessonId === '1-1') {
+                pdfContainer.style.display = 'block';
+                // Using embed for better PDF viewing experience in some browsers, or iframe
+                pdfContainer.innerHTML = '<iframe src="../pdfs/Lesson1_1.pdf" width="100%" height="100%"></iframe>';
+            } else {
+                pdfContainer.style.display = 'none';
+                pdfContainer.innerHTML = '';
+            }
 
             // Scroll to top of content
             document.querySelector('.course-main').scrollTop = 0;
